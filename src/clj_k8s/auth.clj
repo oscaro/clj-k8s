@@ -44,8 +44,13 @@
       .getAccessToken
       .getTokenValue))
 
-(def default-kube-config-path (str (System/getenv "HOME") "/.kube/config"))
+(def default-kube-config-path
+  "Honor env variable before retrieving the home one"
+  (if-let [honored-path (System/getenv "KUBECONFIG")] honored-path
+          (str (System/getenv "HOME") "/.kube/config")))
+
 (defn- find-named [x xs] (some #(when (= (:name %) x) %) xs))
+
 (defn from-gcp-kube-config
   "Creates a context from the kubectl config file"
   ([] (from-gcp-kube-config default-kube-config-path))
@@ -54,6 +59,20 @@
          context      (find-named current-context contexts)
          cluster      (find-named (get-in context [:context :cluster]) clusters)
          access-token (get-google-access-token)]
+     {:base-url  (get-in cluster [:cluster :server])
+      :auths     {"BearerToken" (str "Bearer " access-token)}
+      :namespace (get-in context [:context :namespace] "default")})))
+
+
+(defn from-kube-config
+  "Creates a context from the kubectl config file"
+  ([] (from-kube-config default-kube-config-path))
+  ([cfg-path]
+   (let [{:keys [clusters contexts current-context] :as conf} (yaml/from-file cfg-path)
+         context      (find-named current-context contexts)
+         cluster      (find-named (get-in context [:context :cluster]) clusters)
+         access-token "FIXME"]
+     (clojure.pprint/pprint conf)
      {:base-url  (get-in cluster [:cluster :server])
       :auths     {"BearerToken" (str "Bearer " access-token)}
       :namespace (get-in context [:context :namespace] "default")})))

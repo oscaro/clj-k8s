@@ -13,8 +13,8 @@
   "Fixture for initializing the k8s context"
   ([f] (with-context false f))
   ([debug? f]
-   (let [ctx (cond-> (auth/from-gcp-kube-config)
-               debug? (assoc :debug true))]
+   (let [ctx (cond-> (auth/from-kube-config)     ;(auth/from-gcp-kube-config)
+                 debug? (assoc :debug true))]
      (c/with-api-context ctx
        (f)))))
 

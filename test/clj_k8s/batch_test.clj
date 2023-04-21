@@ -25,7 +25,7 @@
     (is (nil? (get-job "test-job"))))
 
   (testing "The job should be created"
-    (is (= {:kind "Job"	  
+    (is (= {:kind "Job"
 	   :apiVersion "batch/v1"
 	   :metadata
 	   {:name "test-job"

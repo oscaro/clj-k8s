@@ -20,6 +20,12 @@ jobs:
         minikube version: 'v1.28.0'
         kubernetes version: '1.24.12'
         github token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup Minikube Env for test #1
+      run: kubectl -n kube-system create serviceaccount toast
+    - name: Setup Minikube Env for test #2
+      run: kubectl create clusterrolebinding toast-bind --clusterrole=cluster-admin --serviceaccount=kube-system:toast
+    - name: Setup Minikube Env for test #3
+      run: echo "K8S_TOKEN=$(kubectl create token test)" >> $GITHUB_ENV
     # Setup Clojure
     - name: Install dependencies
       run: lein deps

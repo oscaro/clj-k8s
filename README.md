@@ -1,5 +1,10 @@
 # clj-k8s
 
+<a href="https://github.com/oscaro/clj-k8s"><img
+  src=""
+  height="180" align="right"></a>
+
+
 A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
 
 ## License

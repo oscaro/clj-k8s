@@ -1,4 +1,4 @@
-(defproject clj-k8s "1.21.14.1"
+(defproject clj-k8s "1.21.14.1-SNAPSHOT"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"
   :dependencies [[org.clojure/clojure                             "1.10.1"

@@ -1,4 +1,4 @@
-# clj-k8s
+# clj-k8s [![Clojure With Minikube](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml/badge.svg?branch=master)](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml) 
 
 <a href="https://github.com/oscaro/clj-k8s"><img
   src="https://raw.githubusercontent.com/oscaro/clj-k8s/master/.github/logo.png?token=GHSAT0AAAAAABPEZ3KWWLL3OT6CE54XM4IQZCCXZVQ"

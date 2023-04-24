@@ -50,3 +50,4 @@
       (is (= {:name "https" :port 8443 :protocol "TCP"}
              (-> ep :ports first)))
       (is (re-matches #"\d+.\d+.\d+.\d+" (-> ep :addresses first :ip))))))
+

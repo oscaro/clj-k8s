@@ -27,14 +27,14 @@
   (testing "The job should be created"
     (let [submitted-job (-> (submit-job job-spec)
                             (clean-response :controller-uid :managedFields :fieldsV1
-                                            :namespace))]
+                                            :namespace)
+                            (update :metadata dissoc :annotations))]
       (is (= {:kind "Job"
               :apiVersion "batch/v1"
               :metadata
               {:labels {:env "test"}
                :generation 1
-               :name "test-job"
-               :annotations #:batch.kubernetes.io{:job-tracking ""}}
+               :name "test-job"}
               :spec
               {:parallelism 1
                :completions 1
@@ -91,7 +91,8 @@
   (testing "The job should be deleted"
     (let [deleted-job (-> (delete-job "test-job")
                           (clean-response :controller-uid :startTime :completionTime :namespace
-                                          :lastProbeTime :lastTransitionTime :managedFields))]
+                                          :lastProbeTime :lastTransitionTime :managedFields)
+                          (update :metadata dissoc :annotations))]
       (is (= {:kind "Job"
               :apiVersion "batch/v1"
               :metadata
@@ -99,8 +100,7 @@
                :generation 2
                :name "test-job"
                :finalizers ["foregroundDeletion"]
-               :deletionGracePeriodSeconds 0
-               :annotations #:batch.kubernetes.io{:job-tracking ""}}
+               :deletionGracePeriodSeconds 0}
               :spec
               {:parallelism 1
                :completions 1

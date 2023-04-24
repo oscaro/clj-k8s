@@ -1,3 +1,4 @@
+
 (defproject com.oscaro/clj-k8s "1.21.14.2-SNAPSHOT"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"

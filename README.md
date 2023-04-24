@@ -12,15 +12,53 @@ A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
 
 ### Creating client instance
 
+Client is modelized by a map, initialization function depend of your Kubernetes distribution.
+
+
+```clojure
+(ns test
+  (:require [clj-k8s.auth :as ka]))
+
+;; From ServiceAccount
+(def client (ka/from-service-account))
+
+;; From GKE
+(def client (ka/from-gcp-kube-config))
+
+;; From Env
+(def client (ka/from-token))
+
+;; The default & Generic way
+(def client (ka/from-spec {:base-url "https://localhost:6443"
+                           :token "eyGteo8o..."
+                           :namespace "wilkins"}))
+```
+
+#### Special Notes
+- For GKE, the `KUBECONFIG` env variable is honored and `~/.kube/config` used as fallback if path isn't set via argv.
+- For environment variable, the `K8S_TOKEN` should be setup if not provided by argument
+
+The Authentification method is subjected to change in the future, with a generic function for context resolving. We recommand using the `from-spec` method for the moment.
+
 ### Managing Kubernetes Objects
+
+TBD
 
 #### Namespaces
 
+TBD
+
 #### Pods
+
+TBD
 
 #### Jobs
 
+TBD
+
 #### Services
+
+TBD
 
 ## Testing
 

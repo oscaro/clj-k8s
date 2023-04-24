@@ -1,4 +1,3 @@
-
 (defproject com.oscaro/clj-k8s "1.21.14.2-SNAPSHOT"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"
@@ -15,6 +14,7 @@
                  [clj-http                                        "3.12.3"]
                  [cheshire                                        "5.11.0"]
                  [io.forward/yaml                                 "1.0.11"]
+                 [prismatic/schema                                "1.4.1"]
                  [org.flatland/ordered                            "1.15.11"]
                  [com.google.auth/google-auth-library-oauth2-http "1.16.1"]
                  ;; The dependencies below were carefully added and excluded

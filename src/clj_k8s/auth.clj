@@ -1,5 +1,7 @@
 (ns clj-k8s.auth
-  (:require [yaml.core :as yaml])
+  (:require [yaml.core :as yaml]
+            [schema.core :as s]
+            [clj-k8s.models :refer [KubeClientSpec]])
   (:import (com.google.auth.oauth2 GoogleCredentials)
            (java.util List)))
 
@@ -7,17 +9,18 @@
 ;;;                 Auth
 ;;; ==========================================
 
-(def default-k8s-svc-host (System/getenv "KUBERNETES_SERVICE_HOST"))
-(def default-k8s-svc-port (System/getenv "KUBERNETES_SERVICE_PORT"))
-(def default-cluster-service-account-dir "/var/run/secrets/kubernetes.io/serviceaccount")
+(defonce default-k8s-svc-host (System/getenv "KUBERNETES_SERVICE_HOST"))
+(defonce default-k8s-svc-port (System/getenv "KUBERNETES_SERVICE_PORT"))
+(defonce default-cluster-service-account-dir "/var/run/secrets/kubernetes.io/serviceaccount")
+(defonce default-ns "default")
 
 (defn from-service-account
   "Creates a context from within a cluster"
   ([]
    (from-service-account
-     default-k8s-svc-host
-     default-k8s-svc-port
-     default-cluster-service-account-dir))
+    default-k8s-svc-host
+    default-k8s-svc-port
+    default-cluster-service-account-dir))
   ([svc-host svc-port sa-path]
    (letfn [(read-utf8 [n] (slurp (str sa-path "/" n) :encoding "UTF-8"))]
      {:base-url  (format "https://%s:%s" svc-host svc-port)
@@ -66,6 +69,7 @@
       :auths     {"BearerToken" (str "Bearer " access-token)}
       :namespace (get-in context [:context :namespace] "default")})))
 
+
 (def token-from-env
   "Token from environnement"
   (str (System/getenv "K8S_TOKEN")))
@@ -81,3 +85,12 @@
      {:base-url  (get-in cluster [:cluster :server])
       :auths     {"BearerToken" (str "Bearer " token)}
       :namespace (get-in context [:context :namespace] "default")})))
+
+
+(defn from-spec
+  "Create a client directly from spec"
+  [{:keys [token base-url namespace] :as spec}]
+  (s/validate KubeClientSpec spec)
+  {:base-url  base-url
+   :auths     {"BearerToken" (str "Bearer " token)}
+   :namespace (or namespace default-ns)})

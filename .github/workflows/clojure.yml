@@ -21,8 +21,8 @@ jobs:
     - name: Setup Minikube
       uses: manusa/actions-setup-minikube@v2.7.2
       with:
-        minikube version: 'v1.28.0'
-        kubernetes version: '1.24.12'
+        minikube version: 'v1.29.0'
+        kubernetes version: '1.26.1'
         github token: ${{ secrets.GITHUB_TOKEN }}
     - name: Setup Minikube Env for test #1
       run: kubectl -n kube-system create serviceaccount toast

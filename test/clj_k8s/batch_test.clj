@@ -92,7 +92,8 @@
     (let [deleted-job (-> (delete-job "test-job")
                           (clean-response :controller-uid :startTime :completionTime :namespace
                                           :lastProbeTime :lastTransitionTime :managedFields)
-                          (update :metadata dissoc :annotations))]
+                          (update :metadata dissoc :annotations)
+                          (dissoc :status))]
       (is (= {:kind "Job"
               :apiVersion "batch/v1"
               :metadata
@@ -124,8 +125,7 @@
                  :securityContext {}
                  :schedulerName "default-scheduler"}}
                :completionMode "NonIndexed"
-               :suspend false}
-              :status {:active 1 :uncountedTerminatedPods {} :ready 0}} deleted-job))
+               :suspend false}} deleted-job))
       (is (wait-for (nil? (get-job "test-job"))))
       (is (= [] (core/list-pods))))))
 

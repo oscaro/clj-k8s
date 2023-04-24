@@ -1,4 +1,5 @@
-# clj-k8s [![Clojure With Minikube](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml/badge.svg?branch=master)](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml) 
+# clj-k8s [![Clojure With Minikube](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml/badge.svg?branch=master)](https://github.com/oscaro/clj-k8s/actions/workflows/clojure.yml) [![Clojars Project](https://img.shields.io/clojars/v/com.oscaro/clj-k8s.svg)](https://clojars.org/com.oscaro/clj-k8s)
+
 
 <a href="https://github.com/oscaro/clj-k8s"><img
   src="https://raw.githubusercontent.com/oscaro/clj-k8s/master/.github/logo.png?token=GHSAT0AAAAAABPEZ3KWWLL3OT6CE54XM4IQZCCXZVQ"

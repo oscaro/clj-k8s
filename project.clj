@@ -1,6 +1,14 @@
 (defproject clj-k8s "1.21.14.1-SNAPSHOT"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"
+  :deploy-repositories [["snapshots" {:url "https://repo.clojars.org"
+                                      :username :env/clojars_username
+                                      :password :env/clojars_password
+                                      :sign-releases false}]
+                        ["releases"  {:url "https://repo.clojars.org"
+                                      :username :env/clojars_username
+                                      :password :env/clojars_password
+                                      :sign-releases false}]]
   :dependencies [[org.clojure/clojure                             "1.10.1"
                   :scope "provided"]
                  [clj-http                                        "3.10.0"]
@@ -15,6 +23,7 @@
                  [com.fasterxml.jackson.core/jackson-core         "2.10.0"]]
   :min-lein-version "2.8.0"
   :resource-paths ["resources"]
+  :plugins [[lein-marginalia "0.9.1"]]
   :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "0.3.1"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}}

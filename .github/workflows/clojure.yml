@@ -13,7 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    ###################################
     # Setup Minikube
+    ###################################
+
     - name: Setup Minikube
       uses: manusa/actions-setup-minikube@v2.7.2
       with:
@@ -26,8 +30,38 @@ jobs:
       run: kubectl -n kube-system create clusterrolebinding toast-bind --clusterrole=cluster-admin --serviceaccount=kube-system:toast
     - name: Setup Minikube Env for test #3
       run: echo "K8S_TOKEN=$(kubectl -n kube-system create token toast)" >> $GITHUB_ENV
-    # Setup Clojure
+
+    ###################################
+    # Clojure Tests
+    ###################################
+
     - name: Install dependencies
       run: lein deps
     - name: Run tests
       run: lein test
+
+    ###################################
+    # Generate release
+    ###################################
+
+    - name: Deploy to Clojars
+      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/devel'
+      run: lein deploy
+      env:
+        CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+        CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+
+    ###################################
+    # Generate Documentation
+    ###################################
+
+    - name: Generate documentation
+      if: github.ref == 'refs/heads/master'
+      run: lein marg -d public -f index.html
+
+    - name: Deploy documentation to Github Pages
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      if: github.ref == 'refs/heads/master'
+      with:
+        branch: gh-pages
+        folder: public

@@ -14,7 +14,7 @@
   ([f] (with-context false f))
   ([debug? f]
    (let [ctx (cond-> (auth/from-token)
-                 debug? (assoc :debug true))]
+               debug? (assoc :debug true))]
      (c/with-api-context ctx
        (f)))))
 
@@ -31,11 +31,13 @@
         (c/delete-namespace *namespace*)))))
 
 
+
 (def excludes
   [:creationTimestamp
    :deletionTimestamp
    :resourceVersion
    :uid])
+
 
 (defn clean-response
   [r & more-excludes]

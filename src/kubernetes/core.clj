@@ -221,27 +221,33 @@
 (defn call-api
   "Call an API by making HTTP request and return its response."
   [path method {:keys [path-params body-param content-types accepts auth-names] :as opts}]
-  (let [{:keys [debug]} *api-context*
-        {:keys [req-opts query-params header-params form-params]} (auths->opts auth-names)
-        query-params (merge query-params (:query-params opts))
-        header-params (merge header-params (:header-params opts))
-        form-params (merge form-params (:form-params opts))
-        url (make-url path path-params)
-        content-type (or (json-preferred-mime content-types) (and body-param :json))
-        accept (or (json-preferred-mime accepts) :json)
-        multipart? (= "multipart/form-data" content-type)
-        req-opts (cond-> req-opts
-                   true (assoc :url url :method method :insecure? true)
-                   accept (assoc :accept accept)
-                   (seq query-params) (assoc :query-params (normalize-params query-params))
-                   (seq header-params) (assoc :headers (normalize-params header-params))
-                   (and content-type (not multipart?)) (assoc :content-type content-type)
-                   multipart? (assoc :multipart (-> form-params normalize-params form-params->multipart))
-                   (and (not multipart?) (seq form-params)) (assoc :form-params (normalize-params form-params))
-                   body-param (assoc :body (serialize body-param content-type))
-                   debug (assoc :debug true :debug-body true))
-        resp (client/request req-opts)]
-    (when debug
-      (println "Response:")
-      (println resp))
-    (assoc resp :data (deserialize resp))))
+  (try
+    (let [{:keys [debug]} *api-context*
+          {:keys [req-opts query-params header-params form-params]} (auths->opts auth-names)
+          query-params (merge query-params (:query-params opts))
+          header-params (merge header-params (:header-params opts))
+          form-params (merge form-params (:form-params opts))
+          url (make-url path path-params)
+          content-type (or (json-preferred-mime content-types) (and body-param :json))
+          accept (or (json-preferred-mime accepts) :json)
+          multipart? (= "multipart/form-data" content-type)
+          req-opts (cond-> req-opts
+                     true (assoc :url url :method method :insecure? true)
+                     accept (assoc :accept accept)
+                     (seq query-params) (assoc :query-params (normalize-params query-params))
+                     (seq header-params) (assoc :headers (normalize-params header-params))
+                     (and content-type (not multipart?)) (assoc :content-type content-type)
+                     multipart? (assoc :multipart (-> form-params normalize-params form-params->multipart))
+                     (and (not multipart?) (seq form-params)) (assoc :form-params (normalize-params form-params))
+                     body-param (assoc :body (serialize body-param content-type))
+                     debug (assoc :debug true :debug-body true))
+          resp (client/request req-opts)]
+      (when debug
+        (println "Response:")
+        (println resp))
+      (assoc resp :data (deserialize resp)))
+    (catch Exception e
+      (throw (ex-info (.getMessage e)
+                      (merge {:method method :path path}
+                             (some-> (ex-data e)
+                                     (update :body parse-string))))))))

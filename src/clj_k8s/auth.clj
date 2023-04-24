@@ -3,6 +3,10 @@
   (:import (com.google.auth.oauth2 GoogleCredentials)
            (java.util List)))
 
+;;; ==========================================
+;;;                 Auth
+;;; ==========================================
+
 (def default-k8s-svc-host (System/getenv "KUBERNETES_SERVICE_HOST"))
 (def default-k8s-svc-port (System/getenv "KUBERNETES_SERVICE_PORT"))
 (def default-cluster-service-account-dir "/var/run/secrets/kubernetes.io/serviceaccount")

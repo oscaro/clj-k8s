@@ -7,6 +7,44 @@
 
 A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
 
+## API Usage
+
+### Creating client instance
+
+### Managing Kubernetes Objects
+
+#### Namespaces
+
+#### Pods
+
+#### Jobs
+
+#### Services
+
+## Testing
+
+### Setup Minikube
+
+```bash
+minikube start --driver=podman
+```
+
+### Create API Token
+
+```bash
+kubectl -n kube-system create serviceaccount toast
+kubectl -n kube-system create clusterrolebinding toast-bind --clusterrole=cluster-admin --serviceaccount=kube-system:toast
+export K8S_TOKEN=$(kubectl -n kube-system create token toast)
+```
+
+### Lauching tests
+
+When token is properly exported, run tests as follow:
+
+```
+lein test
+```
+
 ## License
 
 Copyright © 2019-2023 Oscaro

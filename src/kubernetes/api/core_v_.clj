@@ -7,7 +7,6 @@
   connect DELETE requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-delete-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -29,7 +28,6 @@
   connect DELETE requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-delete-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :delete
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -51,7 +49,6 @@
   connect DELETE requests to proxy of Service"
   ([name namespace ] (connect-core-v1-delete-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -73,7 +70,6 @@
   connect DELETE requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-delete-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :delete
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -95,7 +91,6 @@
   connect DELETE requests to proxy of Node"
   ([name ] (connect-core-v1-delete-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -117,7 +112,6 @@
   connect DELETE requests to proxy of Node"
   ([name path ] (connect-core-v1-delete-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :delete
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -139,7 +133,6 @@
   connect GET requests to attach of Pod"
   ([name namespace ] (connect-core-v1-get-namespaced-pod-attach-with-http-info name namespace nil))
   ([name namespace {:keys [container stderr stdin stdout tty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/attach" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -161,7 +154,6 @@
   connect GET requests to exec of Pod"
   ([name namespace ] (connect-core-v1-get-namespaced-pod-exec-with-http-info name namespace nil))
   ([name namespace {:keys [command container stderr stdin stdout tty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/exec" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -183,7 +175,6 @@
   connect GET requests to portforward of Pod"
   ([name namespace ] (connect-core-v1-get-namespaced-pod-portforward-with-http-info name namespace nil))
   ([name namespace {:keys [ports ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/portforward" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -205,7 +196,6 @@
   connect GET requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-get-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -227,7 +217,6 @@
   connect GET requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-get-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :get
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -249,7 +238,6 @@
   connect GET requests to proxy of Service"
   ([name namespace ] (connect-core-v1-get-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -271,7 +259,6 @@
   connect GET requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-get-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :get
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -293,7 +280,6 @@
   connect GET requests to proxy of Node"
   ([name ] (connect-core-v1-get-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -315,7 +301,6 @@
   connect GET requests to proxy of Node"
   ([name path ] (connect-core-v1-get-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :get
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -337,7 +322,6 @@
   connect HEAD requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-head-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :head
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -359,7 +343,6 @@
   connect HEAD requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-head-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :head
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -381,7 +364,6 @@
   connect HEAD requests to proxy of Service"
   ([name namespace ] (connect-core-v1-head-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :head
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -403,7 +385,6 @@
   connect HEAD requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-head-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :head
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -425,7 +406,6 @@
   connect HEAD requests to proxy of Node"
   ([name ] (connect-core-v1-head-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :head
              {:path-params   {"name" name }
               :header-params {}
@@ -447,7 +427,6 @@
   connect HEAD requests to proxy of Node"
   ([name path ] (connect-core-v1-head-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :head
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -469,7 +448,6 @@
   connect OPTIONS requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-options-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :options
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -491,7 +469,6 @@
   connect OPTIONS requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-options-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :options
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -513,7 +490,6 @@
   connect OPTIONS requests to proxy of Service"
   ([name namespace ] (connect-core-v1-options-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :options
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -535,7 +511,6 @@
   connect OPTIONS requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-options-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :options
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -557,7 +532,6 @@
   connect OPTIONS requests to proxy of Node"
   ([name ] (connect-core-v1-options-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :options
              {:path-params   {"name" name }
               :header-params {}
@@ -579,7 +553,6 @@
   connect OPTIONS requests to proxy of Node"
   ([name path ] (connect-core-v1-options-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :options
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -601,7 +574,6 @@
   connect PATCH requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-patch-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -623,7 +595,6 @@
   connect PATCH requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-patch-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :patch
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -645,7 +616,6 @@
   connect PATCH requests to proxy of Service"
   ([name namespace ] (connect-core-v1-patch-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -667,7 +637,6 @@
   connect PATCH requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-patch-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :patch
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -689,7 +658,6 @@
   connect PATCH requests to proxy of Node"
   ([name ] (connect-core-v1-patch-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :patch
              {:path-params   {"name" name }
               :header-params {}
@@ -711,7 +679,6 @@
   connect PATCH requests to proxy of Node"
   ([name path ] (connect-core-v1-patch-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :patch
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -733,7 +700,6 @@
   connect POST requests to attach of Pod"
   ([name namespace ] (connect-core-v1-post-namespaced-pod-attach-with-http-info name namespace nil))
   ([name namespace {:keys [container stderr stdin stdout tty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/attach" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -755,7 +721,6 @@
   connect POST requests to exec of Pod"
   ([name namespace ] (connect-core-v1-post-namespaced-pod-exec-with-http-info name namespace nil))
   ([name namespace {:keys [command container stderr stdin stdout tty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/exec" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -777,7 +742,6 @@
   connect POST requests to portforward of Pod"
   ([name namespace ] (connect-core-v1-post-namespaced-pod-portforward-with-http-info name namespace nil))
   ([name namespace {:keys [ports ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/portforward" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -799,7 +763,6 @@
   connect POST requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-post-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -821,7 +784,6 @@
   connect POST requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-post-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :post
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -843,7 +805,6 @@
   connect POST requests to proxy of Service"
   ([name namespace ] (connect-core-v1-post-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -865,7 +826,6 @@
   connect POST requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-post-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :post
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -887,7 +847,6 @@
   connect POST requests to proxy of Node"
   ([name ] (connect-core-v1-post-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :post
              {:path-params   {"name" name }
               :header-params {}
@@ -909,7 +868,6 @@
   connect POST requests to proxy of Node"
   ([name path ] (connect-core-v1-post-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :post
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -931,7 +889,6 @@
   connect PUT requests to proxy of Pod"
   ([name namespace ] (connect-core-v1-put-namespaced-pod-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -953,7 +910,6 @@
   connect PUT requests to proxy of Pod"
   ([name namespace path ] (connect-core-v1-put-namespaced-pod-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}" :put
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -975,7 +931,6 @@
   connect PUT requests to proxy of Service"
   ([name namespace ] (connect-core-v1-put-namespaced-service-proxy-with-http-info name namespace nil))
   ([name namespace {:keys [path ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -997,7 +952,6 @@
   connect PUT requests to proxy of Service"
   ([name namespace path ] (connect-core-v1-put-namespaced-service-proxy-with-path-with-http-info name namespace path nil))
   ([name namespace path {:keys [path2 ]}]
-   (check-required-params name namespace path)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/proxy/{path}" :put
              {:path-params   {"name" name "namespace" namespace "path" path }
               :header-params {}
@@ -1019,7 +973,6 @@
   connect PUT requests to proxy of Node"
   ([name ] (connect-core-v1-put-node-proxy-with-http-info name nil))
   ([name {:keys [path ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/proxy" :put
              {:path-params   {"name" name }
               :header-params {}
@@ -1041,7 +994,6 @@
   connect PUT requests to proxy of Node"
   ([name path ] (connect-core-v1-put-node-proxy-with-path-with-http-info name path nil))
   ([name path {:keys [path2 ]}]
-   (check-required-params name path)
    (call-api "/api/v1/nodes/{name}/proxy/{path}" :put
              {:path-params   {"name" name "path" path }
               :header-params {}
@@ -1062,12 +1014,11 @@
   "
   create a Namespace"
   ([body ] (create-core-v1-namespace-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1085,12 +1036,11 @@
   "
   create a Binding"
   ([namespace body ] (create-core-v1-namespaced-binding-with-http-info namespace body nil))
-  ([namespace body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/bindings" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1108,12 +1058,11 @@
   "
   create a ConfigMap"
   ([namespace body ] (create-core-v1-namespaced-config-map-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1131,12 +1080,11 @@
   "
   create Endpoints"
   ([namespace body ] (create-core-v1-namespaced-endpoints-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1154,12 +1102,11 @@
   "
   create an Event"
   ([namespace body ] (create-core-v1-namespaced-event-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/events" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1177,12 +1124,11 @@
   "
   create a LimitRange"
   ([namespace body ] (create-core-v1-namespaced-limit-range-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1200,12 +1146,11 @@
   "
   create a PersistentVolumeClaim"
   ([namespace body ] (create-core-v1-namespaced-persistent-volume-claim-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1223,12 +1168,11 @@
   "
   create a Pod"
   ([namespace body ] (create-core-v1-namespaced-pod-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1246,12 +1190,11 @@
   "
   create binding of a Pod"
   ([name namespace body ] (create-core-v1-namespaced-pod-binding-with-http-info name namespace body nil))
-  ([name namespace body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/binding" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1269,12 +1212,11 @@
   "
   create eviction of a Pod"
   ([name namespace body ] (create-core-v1-namespaced-pod-eviction-with-http-info name namespace body nil))
-  ([name namespace body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/eviction" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1292,12 +1234,11 @@
   "
   create a PodTemplate"
   ([namespace body ] (create-core-v1-namespaced-pod-template-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1315,12 +1256,11 @@
   "
   create a ReplicationController"
   ([namespace body ] (create-core-v1-namespaced-replication-controller-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1338,12 +1278,11 @@
   "
   create a ResourceQuota"
   ([namespace body ] (create-core-v1-namespaced-resource-quota-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1361,12 +1300,11 @@
   "
   create a Secret"
   ([namespace body ] (create-core-v1-namespaced-secret-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1384,12 +1322,11 @@
   "
   create a Service"
   ([namespace body ] (create-core-v1-namespaced-service-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/services" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1407,12 +1344,11 @@
   "
   create a ServiceAccount"
   ([namespace body ] (create-core-v1-namespaced-service-account-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1430,12 +1366,11 @@
   "
   create token of a ServiceAccount"
   ([name namespace body ] (create-core-v1-namespaced-service-account-token-with-http-info name namespace body nil))
-  ([name namespace body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts/{name}/token" :post
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1453,12 +1388,11 @@
   "
   create a Node"
   ([body ] (create-core-v1-node-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/nodes" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1476,12 +1410,11 @@
   "
   create a PersistentVolume"
   ([body ] (create-core-v1-persistent-volume-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/persistentvolumes" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -1499,13 +1432,13 @@
   "
   delete collection of ConfigMap"
   ([namespace ] (delete-core-v1-collection-namespaced-config-map-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1521,13 +1454,13 @@
   "
   delete collection of Endpoints"
   ([namespace ] (delete-core-v1-collection-namespaced-endpoints-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1543,13 +1476,13 @@
   "
   delete collection of Event"
   ([namespace ] (delete-core-v1-collection-namespaced-event-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/events" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1565,13 +1498,13 @@
   "
   delete collection of LimitRange"
   ([namespace ] (delete-core-v1-collection-namespaced-limit-range-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1587,13 +1520,13 @@
   "
   delete collection of PersistentVolumeClaim"
   ([namespace ] (delete-core-v1-collection-namespaced-persistent-volume-claim-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1609,13 +1542,13 @@
   "
   delete collection of Pod"
   ([namespace ] (delete-core-v1-collection-namespaced-pod-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1631,13 +1564,13 @@
   "
   delete collection of PodTemplate"
   ([namespace ] (delete-core-v1-collection-namespaced-pod-template-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1653,13 +1586,13 @@
   "
   delete collection of ReplicationController"
   ([namespace ] (delete-core-v1-collection-namespaced-replication-controller-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1675,13 +1608,13 @@
   "
   delete collection of ResourceQuota"
   ([namespace ] (delete-core-v1-collection-namespaced-resource-quota-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1697,13 +1630,13 @@
   "
   delete collection of Secret"
   ([namespace ] (delete-core-v1-collection-namespaced-secret-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1715,17 +1648,39 @@
   ([namespace optional-params]
    (:data (delete-core-v1-collection-namespaced-secret-with-http-info namespace optional-params))))
 
+(defn delete-core-v1-collection-namespaced-service-with-http-info
+  "
+  delete collection of Service"
+  ([namespace ] (delete-core-v1-collection-namespaced-service-with-http-info namespace nil))
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
+   (call-api "/api/v1/namespaces/{namespace}/services" :delete
+             {:path-params   {"namespace" namespace }
+              :header-params {}
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
+              :form-params   {}
+              :body-param    body
+              :content-types ["*/*"]
+              :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
+              :auth-names    ["BearerToken"]})))
+
+(defn delete-core-v1-collection-namespaced-service
+  "
+  delete collection of Service"
+  ([namespace ] (delete-core-v1-collection-namespaced-service namespace nil))
+  ([namespace optional-params]
+   (:data (delete-core-v1-collection-namespaced-service-with-http-info namespace optional-params))))
+
 (defn delete-core-v1-collection-namespaced-service-account-with-http-info
   "
   delete collection of ServiceAccount"
   ([namespace ] (delete-core-v1-collection-namespaced-service-account-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1741,12 +1696,13 @@
   "
   delete collection of Node"
   ([] (delete-core-v1-collection-node-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/nodes" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1762,12 +1718,13 @@
   "
   delete collection of PersistentVolume"
   ([] (delete-core-v1-collection-persistent-volume-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/api/v1/persistentvolumes" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -1784,7 +1741,6 @@
   delete a Namespace"
   ([name ] (delete-core-v1-namespace-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/api/v1/namespaces/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -1807,7 +1763,6 @@
   delete a ConfigMap"
   ([name namespace ] (delete-core-v1-namespaced-config-map-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/configmaps/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1830,7 +1785,6 @@
   delete Endpoints"
   ([name namespace ] (delete-core-v1-namespaced-endpoints-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/endpoints/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1853,7 +1807,6 @@
   delete an Event"
   ([name namespace ] (delete-core-v1-namespaced-event-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/events/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1876,7 +1829,6 @@
   delete a LimitRange"
   ([name namespace ] (delete-core-v1-namespaced-limit-range-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/limitranges/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1899,7 +1851,6 @@
   delete a PersistentVolumeClaim"
   ([name namespace ] (delete-core-v1-namespaced-persistent-volume-claim-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1922,7 +1873,6 @@
   delete a Pod"
   ([name namespace ] (delete-core-v1-namespaced-pod-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1945,7 +1895,6 @@
   delete a PodTemplate"
   ([name namespace ] (delete-core-v1-namespaced-pod-template-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/podtemplates/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1968,7 +1917,6 @@
   delete a ReplicationController"
   ([name namespace ] (delete-core-v1-namespaced-replication-controller-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -1991,7 +1939,6 @@
   delete a ResourceQuota"
   ([name namespace ] (delete-core-v1-namespaced-resource-quota-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -2014,7 +1961,6 @@
   delete a Secret"
   ([name namespace ] (delete-core-v1-namespaced-secret-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/secrets/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -2037,7 +1983,6 @@
   delete a Service"
   ([name namespace ] (delete-core-v1-namespaced-service-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -2060,7 +2005,6 @@
   delete a ServiceAccount"
   ([name namespace ] (delete-core-v1-namespaced-service-account-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -2083,7 +2027,6 @@
   delete a Node"
   ([name ] (delete-core-v1-node-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -2106,7 +2049,6 @@
   delete a PersistentVolume"
   ([name ] (delete-core-v1-persistent-volume-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/api/v1/persistentvolumes/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -2147,11 +2089,11 @@
   "
   list objects of kind ComponentStatus"
   ([] (list-core-v1-component-status-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/componentstatuses" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2168,11 +2110,11 @@
   "
   list or watch objects of kind ConfigMap"
   ([] (list-core-v1-config-map-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/configmaps" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2189,11 +2131,11 @@
   "
   list or watch objects of kind Endpoints"
   ([] (list-core-v1-endpoints-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/endpoints" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2210,11 +2152,11 @@
   "
   list or watch objects of kind Event"
   ([] (list-core-v1-event-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/events" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2231,11 +2173,11 @@
   "
   list or watch objects of kind LimitRange"
   ([] (list-core-v1-limit-range-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/limitranges" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2252,11 +2194,11 @@
   "
   list or watch objects of kind Namespace"
   ([] (list-core-v1-namespace-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2273,12 +2215,11 @@
   "
   list or watch objects of kind ConfigMap"
   ([namespace ] (list-core-v1-namespaced-config-map-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2295,12 +2236,11 @@
   "
   list or watch objects of kind Endpoints"
   ([namespace ] (list-core-v1-namespaced-endpoints-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2317,12 +2257,11 @@
   "
   list or watch objects of kind Event"
   ([namespace ] (list-core-v1-namespaced-event-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/events" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2339,12 +2278,11 @@
   "
   list or watch objects of kind LimitRange"
   ([namespace ] (list-core-v1-namespaced-limit-range-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2361,12 +2299,11 @@
   "
   list or watch objects of kind PersistentVolumeClaim"
   ([namespace ] (list-core-v1-namespaced-persistent-volume-claim-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2383,12 +2320,11 @@
   "
   list or watch objects of kind Pod"
   ([namespace ] (list-core-v1-namespaced-pod-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2405,12 +2341,11 @@
   "
   list or watch objects of kind PodTemplate"
   ([namespace ] (list-core-v1-namespaced-pod-template-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2427,12 +2362,11 @@
   "
   list or watch objects of kind ReplicationController"
   ([namespace ] (list-core-v1-namespaced-replication-controller-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2449,12 +2383,11 @@
   "
   list or watch objects of kind ResourceQuota"
   ([namespace ] (list-core-v1-namespaced-resource-quota-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2471,12 +2404,11 @@
   "
   list or watch objects of kind Secret"
   ([namespace ] (list-core-v1-namespaced-secret-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2493,12 +2425,11 @@
   "
   list or watch objects of kind Service"
   ([namespace ] (list-core-v1-namespaced-service-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/services" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2515,12 +2446,11 @@
   "
   list or watch objects of kind ServiceAccount"
   ([namespace ] (list-core-v1-namespaced-service-account-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2537,11 +2467,11 @@
   "
   list or watch objects of kind Node"
   ([] (list-core-v1-node-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/nodes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2558,11 +2488,11 @@
   "
   list or watch objects of kind PersistentVolume"
   ([] (list-core-v1-persistent-volume-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/persistentvolumes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2579,11 +2509,11 @@
   "
   list or watch objects of kind PersistentVolumeClaim"
   ([] (list-core-v1-persistent-volume-claim-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/persistentvolumeclaims" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2600,11 +2530,11 @@
   "
   list or watch objects of kind Pod"
   ([] (list-core-v1-pod-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/pods" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2621,11 +2551,11 @@
   "
   list or watch objects of kind PodTemplate"
   ([] (list-core-v1-pod-template-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/podtemplates" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2642,11 +2572,11 @@
   "
   list or watch objects of kind ReplicationController"
   ([] (list-core-v1-replication-controller-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/replicationcontrollers" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2663,11 +2593,11 @@
   "
   list or watch objects of kind ResourceQuota"
   ([] (list-core-v1-resource-quota-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/resourcequotas" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2684,11 +2614,11 @@
   "
   list or watch objects of kind Secret"
   ([] (list-core-v1-secret-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/secrets" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2705,11 +2635,11 @@
   "
   list or watch objects of kind ServiceAccount"
   ([] (list-core-v1-service-account-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/serviceaccounts" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2726,11 +2656,11 @@
   "
   list or watch objects of kind Service"
   ([] (list-core-v1-service-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/services" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -2747,15 +2677,14 @@
   "
   partially update the specified Namespace"
   ([name body ] (patch-core-v1-namespace-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2770,15 +2699,14 @@
   "
   partially update status of the specified Namespace"
   ([name body ] (patch-core-v1-namespace-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2793,15 +2721,14 @@
   "
   partially update the specified ConfigMap"
   ([name namespace body ] (patch-core-v1-namespaced-config-map-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2816,15 +2743,14 @@
   "
   partially update the specified Endpoints"
   ([name namespace body ] (patch-core-v1-namespaced-endpoints-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2839,15 +2765,14 @@
   "
   partially update the specified Event"
   ([name namespace body ] (patch-core-v1-namespaced-event-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/events/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2862,15 +2787,14 @@
   "
   partially update the specified LimitRange"
   ([name namespace body ] (patch-core-v1-namespaced-limit-range-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2885,15 +2809,14 @@
   "
   partially update the specified PersistentVolumeClaim"
   ([name namespace body ] (patch-core-v1-namespaced-persistent-volume-claim-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2908,15 +2831,14 @@
   "
   partially update status of the specified PersistentVolumeClaim"
   ([name namespace body ] (patch-core-v1-namespaced-persistent-volume-claim-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2931,15 +2853,14 @@
   "
   partially update the specified Pod"
   ([name namespace body ] (patch-core-v1-namespaced-pod-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2950,19 +2871,40 @@
   ([name namespace body optional-params]
    (:data (patch-core-v1-namespaced-pod-with-http-info name namespace body optional-params))))
 
+(defn patch-core-v1-namespaced-pod-ephemeralcontainers-with-http-info
+  "
+  partially update ephemeralcontainers of the specified Pod"
+  ([name namespace body ] (patch-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace body nil))
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
+   (call-api "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers" :patch
+             {:path-params   {"name" name "namespace" namespace }
+              :header-params {}
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
+              :form-params   {}
+              :body-param    body
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
+              :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
+              :auth-names    ["BearerToken"]})))
+
+(defn patch-core-v1-namespaced-pod-ephemeralcontainers
+  "
+  partially update ephemeralcontainers of the specified Pod"
+  ([name namespace body ] (patch-core-v1-namespaced-pod-ephemeralcontainers name namespace body nil))
+  ([name namespace body optional-params]
+   (:data (patch-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace body optional-params))))
+
 (defn patch-core-v1-namespaced-pod-status-with-http-info
   "
   partially update status of the specified Pod"
   ([name namespace body ] (patch-core-v1-namespaced-pod-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/status" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -2977,15 +2919,14 @@
   "
   partially update the specified PodTemplate"
   ([name namespace body ] (patch-core-v1-namespaced-pod-template-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3000,15 +2941,14 @@
   "
   partially update the specified ReplicationController"
   ([name namespace body ] (patch-core-v1-namespaced-replication-controller-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3023,15 +2963,14 @@
   "
   partially update scale of the specified ReplicationController"
   ([name namespace body ] (patch-core-v1-namespaced-replication-controller-scale-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3046,15 +2985,14 @@
   "
   partially update status of the specified ReplicationController"
   ([name namespace body ] (patch-core-v1-namespaced-replication-controller-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3069,15 +3007,14 @@
   "
   partially update the specified ResourceQuota"
   ([name namespace body ] (patch-core-v1-namespaced-resource-quota-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3092,15 +3029,14 @@
   "
   partially update status of the specified ResourceQuota"
   ([name namespace body ] (patch-core-v1-namespaced-resource-quota-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3115,15 +3051,14 @@
   "
   partially update the specified Secret"
   ([name namespace body ] (patch-core-v1-namespaced-secret-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3138,15 +3073,14 @@
   "
   partially update the specified Service"
   ([name namespace body ] (patch-core-v1-namespaced-service-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/services/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3161,15 +3095,14 @@
   "
   partially update the specified ServiceAccount"
   ([name namespace body ] (patch-core-v1-namespaced-service-account-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3184,15 +3117,14 @@
   "
   partially update status of the specified Service"
   ([name namespace body ] (patch-core-v1-namespaced-service-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/status" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3207,15 +3139,14 @@
   "
   partially update the specified Node"
   ([name body ] (patch-core-v1-node-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/nodes/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3230,15 +3161,14 @@
   "
   partially update status of the specified Node"
   ([name body ] (patch-core-v1-node-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/nodes/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3253,15 +3183,14 @@
   "
   partially update the specified PersistentVolume"
   ([name body ] (patch-core-v1-persistent-volume-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/persistentvolumes/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3276,15 +3205,14 @@
   "
   partially update status of the specified PersistentVolume"
   ([name body ] (patch-core-v1-persistent-volume-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/api/v1/persistentvolumes/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -3300,7 +3228,6 @@
   read the specified ComponentStatus"
   ([name ] (read-core-v1-component-status-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/api/v1/componentstatuses/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -3321,12 +3248,11 @@
   "
   read the specified Namespace"
   ([name ] (read-core-v1-namespace-with-http-info name nil))
-  ([name {:keys [pretty exact export ]}]
-   (check-required-params name)
+  ([name {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3344,7 +3270,6 @@
   read status of the specified Namespace"
   ([name ] (read-core-v1-namespace-status-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/api/v1/namespaces/{name}/status" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -3365,12 +3290,11 @@
   "
   read the specified ConfigMap"
   ([name namespace ] (read-core-v1-namespaced-config-map-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3387,12 +3311,11 @@
   "
   read the specified Endpoints"
   ([name namespace ] (read-core-v1-namespaced-endpoints-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3409,12 +3332,11 @@
   "
   read the specified Event"
   ([name namespace ] (read-core-v1-namespaced-event-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/events/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3431,12 +3353,11 @@
   "
   read the specified LimitRange"
   ([name namespace ] (read-core-v1-namespaced-limit-range-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3453,12 +3374,11 @@
   "
   read the specified PersistentVolumeClaim"
   ([name namespace ] (read-core-v1-namespaced-persistent-volume-claim-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3476,7 +3396,6 @@
   read status of the specified PersistentVolumeClaim"
   ([name namespace ] (read-core-v1-namespaced-persistent-volume-claim-status-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3497,12 +3416,11 @@
   "
   read the specified Pod"
   ([name namespace ] (read-core-v1-namespaced-pod-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3515,16 +3433,36 @@
   ([name namespace optional-params]
    (:data (read-core-v1-namespaced-pod-with-http-info name namespace optional-params))))
 
+(defn read-core-v1-namespaced-pod-ephemeralcontainers-with-http-info
+  "
+  read ephemeralcontainers of the specified Pod"
+  ([name namespace ] (read-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace nil))
+  ([name namespace {:keys [pretty ]}]
+   (call-api "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers" :get
+             {:path-params   {"name" name "namespace" namespace }
+              :header-params {}
+              :query-params  {"pretty" pretty }
+              :form-params   {}
+              :content-types ["*/*"]
+              :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
+              :auth-names    ["BearerToken"]})))
+
+(defn read-core-v1-namespaced-pod-ephemeralcontainers
+  "
+  read ephemeralcontainers of the specified Pod"
+  ([name namespace ] (read-core-v1-namespaced-pod-ephemeralcontainers name namespace nil))
+  ([name namespace optional-params]
+   (:data (read-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace optional-params))))
+
 (defn read-core-v1-namespaced-pod-log-with-http-info
   "
   read log of the specified Pod"
   ([name namespace ] (read-core-v1-namespaced-pod-log-with-http-info name namespace nil))
-  ([name namespace {:keys [container follow limit-bytes pretty previous since-seconds tail-lines timestamps ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [container follow insecure-skip-tls-verify-backend limit-bytes pretty previous since-seconds tail-lines timestamps ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/log" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"container" container "follow" follow "limitBytes" limit-bytes "pretty" pretty "previous" previous "sinceSeconds" since-seconds "tailLines" tail-lines "timestamps" timestamps }
+              :query-params  {"container" container "follow" follow "insecureSkipTLSVerifyBackend" insecure-skip-tls-verify-backend "limitBytes" limit-bytes "pretty" pretty "previous" previous "sinceSeconds" since-seconds "tailLines" tail-lines "timestamps" timestamps }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["text/plain" "application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3542,7 +3480,6 @@
   read status of the specified Pod"
   ([name namespace ] (read-core-v1-namespaced-pod-status-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/status" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3563,12 +3500,11 @@
   "
   read the specified PodTemplate"
   ([name namespace ] (read-core-v1-namespaced-pod-template-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3585,12 +3521,11 @@
   "
   read the specified ReplicationController"
   ([name namespace ] (read-core-v1-namespaced-replication-controller-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3608,7 +3543,6 @@
   read scale of the specified ReplicationController"
   ([name namespace ] (read-core-v1-namespaced-replication-controller-scale-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3630,7 +3564,6 @@
   read status of the specified ReplicationController"
   ([name namespace ] (read-core-v1-namespaced-replication-controller-status-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3651,12 +3584,11 @@
   "
   read the specified ResourceQuota"
   ([name namespace ] (read-core-v1-namespaced-resource-quota-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3674,7 +3606,6 @@
   read status of the specified ResourceQuota"
   ([name namespace ] (read-core-v1-namespaced-resource-quota-status-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3695,12 +3626,11 @@
   "
   read the specified Secret"
   ([name namespace ] (read-core-v1-namespaced-secret-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3717,12 +3647,11 @@
   "
   read the specified Service"
   ([name namespace ] (read-core-v1-namespaced-service-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/services/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3739,12 +3668,11 @@
   "
   read the specified ServiceAccount"
   ([name namespace ] (read-core-v1-namespaced-service-account-with-http-info name namespace nil))
-  ([name namespace {:keys [pretty exact export ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [pretty ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3762,7 +3690,6 @@
   read status of the specified Service"
   ([name namespace ] (read-core-v1-namespaced-service-status-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/status" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -3783,12 +3710,11 @@
   "
   read the specified Node"
   ([name ] (read-core-v1-node-with-http-info name nil))
-  ([name {:keys [pretty exact export ]}]
-   (check-required-params name)
+  ([name {:keys [pretty ]}]
    (call-api "/api/v1/nodes/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3806,7 +3732,6 @@
   read status of the specified Node"
   ([name ] (read-core-v1-node-status-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/api/v1/nodes/{name}/status" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -3827,12 +3752,11 @@
   "
   read the specified PersistentVolume"
   ([name ] (read-core-v1-persistent-volume-with-http-info name nil))
-  ([name {:keys [pretty exact export ]}]
-   (check-required-params name)
+  ([name {:keys [pretty ]}]
    (call-api "/api/v1/persistentvolumes/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -3850,7 +3774,6 @@
   read status of the specified PersistentVolume"
   ([name ] (read-core-v1-persistent-volume-status-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/api/v1/persistentvolumes/{name}/status" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -3871,12 +3794,11 @@
   "
   replace the specified Namespace"
   ([name body ] (replace-core-v1-namespace-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -3894,12 +3816,11 @@
   "
   replace finalize of the specified Namespace"
   ([name body ] (replace-core-v1-namespace-finalize-with-http-info name body nil))
-  ([name body {:keys [dry-run pretty ]}]
-   (check-required-params name body)
+  ([name body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/api/v1/namespaces/{name}/finalize" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"dryRun" dry-run "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -3917,12 +3838,11 @@
   "
   replace status of the specified Namespace"
   ([name body ] (replace-core-v1-namespace-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{name}/status" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -3940,12 +3860,11 @@
   "
   replace the specified ConfigMap"
   ([name namespace body ] (replace-core-v1-namespaced-config-map-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/configmaps/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -3963,12 +3882,11 @@
   "
   replace the specified Endpoints"
   ([name namespace body ] (replace-core-v1-namespaced-endpoints-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/endpoints/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -3986,12 +3904,11 @@
   "
   replace the specified Event"
   ([name namespace body ] (replace-core-v1-namespaced-event-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/events/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4009,12 +3926,11 @@
   "
   replace the specified LimitRange"
   ([name namespace body ] (replace-core-v1-namespaced-limit-range-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/limitranges/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4032,12 +3948,11 @@
   "
   replace the specified PersistentVolumeClaim"
   ([name namespace body ] (replace-core-v1-namespaced-persistent-volume-claim-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4055,12 +3970,11 @@
   "
   replace status of the specified PersistentVolumeClaim"
   ([name namespace body ] (replace-core-v1-namespaced-persistent-volume-claim-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4078,12 +3992,11 @@
   "
   replace the specified Pod"
   ([name namespace body ] (replace-core-v1-namespaced-pod-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4097,16 +4010,37 @@
   ([name namespace body optional-params]
    (:data (replace-core-v1-namespaced-pod-with-http-info name namespace body optional-params))))
 
+(defn replace-core-v1-namespaced-pod-ephemeralcontainers-with-http-info
+  "
+  replace ephemeralcontainers of the specified Pod"
+  ([name namespace body ] (replace-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace body nil))
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+   (call-api "/api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers" :put
+             {:path-params   {"name" name "namespace" namespace }
+              :header-params {}
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :form-params   {}
+              :body-param    body
+              :content-types ["*/*"]
+              :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
+              :auth-names    ["BearerToken"]})))
+
+(defn replace-core-v1-namespaced-pod-ephemeralcontainers
+  "
+  replace ephemeralcontainers of the specified Pod"
+  ([name namespace body ] (replace-core-v1-namespaced-pod-ephemeralcontainers name namespace body nil))
+  ([name namespace body optional-params]
+   (:data (replace-core-v1-namespaced-pod-ephemeralcontainers-with-http-info name namespace body optional-params))))
+
 (defn replace-core-v1-namespaced-pod-status-with-http-info
   "
   replace status of the specified Pod"
   ([name namespace body ] (replace-core-v1-namespaced-pod-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/pods/{name}/status" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4124,12 +4058,11 @@
   "
   replace the specified PodTemplate"
   ([name namespace body ] (replace-core-v1-namespaced-pod-template-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/podtemplates/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4147,12 +4080,11 @@
   "
   replace the specified ReplicationController"
   ([name namespace body ] (replace-core-v1-namespaced-replication-controller-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4170,12 +4102,11 @@
   "
   replace scale of the specified ReplicationController"
   ([name namespace body ] (replace-core-v1-namespaced-replication-controller-scale-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4193,12 +4124,11 @@
   "
   replace status of the specified ReplicationController"
   ([name namespace body ] (replace-core-v1-namespaced-replication-controller-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4216,12 +4146,11 @@
   "
   replace the specified ResourceQuota"
   ([name namespace body ] (replace-core-v1-namespaced-resource-quota-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4239,12 +4168,11 @@
   "
   replace status of the specified ResourceQuota"
   ([name namespace body ] (replace-core-v1-namespaced-resource-quota-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/resourcequotas/{name}/status" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4262,12 +4190,11 @@
   "
   replace the specified Secret"
   ([name namespace body ] (replace-core-v1-namespaced-secret-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/secrets/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4285,12 +4212,11 @@
   "
   replace the specified Service"
   ([name namespace body ] (replace-core-v1-namespaced-service-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/services/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4308,12 +4234,11 @@
   "
   replace the specified ServiceAccount"
   ([name namespace body ] (replace-core-v1-namespaced-service-account-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/serviceaccounts/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4331,12 +4256,11 @@
   "
   replace status of the specified Service"
   ([name namespace body ] (replace-core-v1-namespaced-service-status-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/namespaces/{namespace}/services/{name}/status" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4354,12 +4278,11 @@
   "
   replace the specified Node"
   ([name body ] (replace-core-v1-node-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/nodes/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4377,12 +4300,11 @@
   "
   replace status of the specified Node"
   ([name body ] (replace-core-v1-node-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/nodes/{name}/status" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4400,12 +4322,11 @@
   "
   replace the specified PersistentVolume"
   ([name body ] (replace-core-v1-persistent-volume-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/persistentvolumes/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4423,12 +4344,11 @@
   "
   replace status of the specified PersistentVolume"
   ([name body ] (replace-core-v1-persistent-volume-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/api/v1/persistentvolumes/{name}/status" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -4446,11 +4366,11 @@
   "
   watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-config-map-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/configmaps" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4467,11 +4387,11 @@
   "
   watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-endpoints-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/endpoints" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4488,11 +4408,11 @@
   "
   watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-event-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/events" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4509,11 +4429,11 @@
   "
   watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-limit-range-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/limitranges" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4530,12 +4450,11 @@
   "
   watch changes to an object of kind Namespace. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-core-v1-namespace-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4552,11 +4471,11 @@
   "
   watch individual changes to a list of Namespace. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-namespace-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4573,12 +4492,11 @@
   "
   watch changes to an object of kind ConfigMap. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-config-map-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/configmaps/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4595,12 +4513,11 @@
   "
   watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-config-map-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/configmaps" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4617,12 +4534,11 @@
   "
   watch changes to an object of kind Endpoints. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-endpoints-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/endpoints/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4639,12 +4555,11 @@
   "
   watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-endpoints-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/endpoints" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4661,12 +4576,11 @@
   "
   watch changes to an object of kind Event. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-event-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/events/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4683,12 +4597,11 @@
   "
   watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-event-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/events" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4705,12 +4618,11 @@
   "
   watch changes to an object of kind LimitRange. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-limit-range-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/limitranges/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4727,12 +4639,11 @@
   "
   watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-limit-range-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/limitranges" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4749,12 +4660,11 @@
   "
   watch changes to an object of kind PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-persistent-volume-claim-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4771,12 +4681,11 @@
   "
   watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-persistent-volume-claim-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/persistentvolumeclaims" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4793,12 +4702,11 @@
   "
   watch changes to an object of kind Pod. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-pod-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/pods/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4815,12 +4723,11 @@
   "
   watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-pod-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/pods" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4837,12 +4744,11 @@
   "
   watch changes to an object of kind PodTemplate. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-pod-template-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/podtemplates/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4859,12 +4765,11 @@
   "
   watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-pod-template-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/podtemplates" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4881,12 +4786,11 @@
   "
   watch changes to an object of kind ReplicationController. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-replication-controller-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4903,12 +4807,11 @@
   "
   watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-replication-controller-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/replicationcontrollers" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4925,12 +4828,11 @@
   "
   watch changes to an object of kind ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-resource-quota-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/resourcequotas/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4947,12 +4849,11 @@
   "
   watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-resource-quota-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/resourcequotas" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4969,12 +4870,11 @@
   "
   watch changes to an object of kind Secret. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-secret-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/secrets/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -4991,12 +4891,11 @@
   "
   watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-secret-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/secrets" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5013,12 +4912,11 @@
   "
   watch changes to an object of kind Service. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-service-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/services/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5035,12 +4933,11 @@
   "
   watch changes to an object of kind ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-core-v1-namespaced-service-account-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5057,12 +4954,11 @@
   "
   watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-service-account-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/serviceaccounts" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5079,12 +4975,11 @@
   "
   watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-core-v1-namespaced-service-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/namespaces/{namespace}/services" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5101,12 +4996,11 @@
   "
   watch changes to an object of kind Node. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-core-v1-node-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/nodes/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5123,11 +5017,11 @@
   "
   watch individual changes to a list of Node. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-node-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/nodes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5144,12 +5038,11 @@
   "
   watch changes to an object of kind PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-core-v1-persistent-volume-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/persistentvolumes/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5166,11 +5059,11 @@
   "
   watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-persistent-volume-claim-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/persistentvolumeclaims" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5187,11 +5080,11 @@
   "
   watch individual changes to a list of PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-persistent-volume-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/persistentvolumes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5208,11 +5101,11 @@
   "
   watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-pod-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/pods" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5229,11 +5122,11 @@
   "
   watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-pod-template-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/podtemplates" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5250,11 +5143,11 @@
   "
   watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-replication-controller-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/replicationcontrollers" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5271,11 +5164,11 @@
   "
   watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-resource-quota-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/resourcequotas" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5292,11 +5185,11 @@
   "
   watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-secret-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/secrets" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5313,11 +5206,11 @@
   "
   watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-service-account-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/serviceaccounts" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -5334,11 +5227,11 @@
   "
   watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-core-v1-service-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/api/v1/watch/services" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]

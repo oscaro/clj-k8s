@@ -6,12 +6,11 @@
   "
   create a ClusterRole"
   ([body ] (create-rbac-authorization-v1-cluster-role-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -29,12 +28,11 @@
   "
   create a ClusterRoleBinding"
   ([body ] (create-rbac-authorization-v1-cluster-role-binding-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -52,12 +50,11 @@
   "
   create a Role"
   ([namespace body ] (create-rbac-authorization-v1-namespaced-role-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -75,12 +72,11 @@
   "
   create a RoleBinding"
   ([namespace body ] (create-rbac-authorization-v1-namespaced-role-binding-with-http-info namespace body nil))
-  ([namespace body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -99,7 +95,6 @@
   delete a ClusterRole"
   ([name ] (delete-rbac-authorization-v1-cluster-role-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -122,7 +117,6 @@
   delete a ClusterRoleBinding"
   ([name ] (delete-rbac-authorization-v1-cluster-role-binding-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -144,12 +138,13 @@
   "
   delete collection of ClusterRole"
   ([] (delete-rbac-authorization-v1-collection-cluster-role-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -165,12 +160,13 @@
   "
   delete collection of ClusterRoleBinding"
   ([] (delete-rbac-authorization-v1-collection-cluster-role-binding-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -186,13 +182,13 @@
   "
   delete collection of Role"
   ([namespace ] (delete-rbac-authorization-v1-collection-namespaced-role-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -208,13 +204,13 @@
   "
   delete collection of RoleBinding"
   ([namespace ] (delete-rbac-authorization-v1-collection-namespaced-role-binding-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -231,7 +227,6 @@
   delete a Role"
   ([name namespace ] (delete-rbac-authorization-v1-namespaced-role-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -254,7 +249,6 @@
   delete a RoleBinding"
   ([name namespace ] (delete-rbac-authorization-v1-namespaced-role-binding-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name namespace)
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -295,11 +289,11 @@
   "
   list or watch objects of kind ClusterRole"
   ([] (list-rbac-authorization-v1-cluster-role-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -316,11 +310,11 @@
   "
   list or watch objects of kind ClusterRoleBinding"
   ([] (list-rbac-authorization-v1-cluster-role-binding-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -337,12 +331,11 @@
   "
   list or watch objects of kind Role"
   ([namespace ] (list-rbac-authorization-v1-namespaced-role-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -359,12 +352,11 @@
   "
   list or watch objects of kind RoleBinding"
   ([namespace ] (list-rbac-authorization-v1-namespaced-role-binding-with-http-info namespace nil))
-  ([namespace {:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -381,11 +373,11 @@
   "
   list or watch objects of kind RoleBinding"
   ([] (list-rbac-authorization-v1-role-binding-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/rolebindings" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -402,11 +394,11 @@
   "
   list or watch objects of kind Role"
   ([] (list-rbac-authorization-v1-role-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/roles" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -423,15 +415,14 @@
   "
   partially update the specified ClusterRole"
   ([name body ] (patch-rbac-authorization-v1-cluster-role-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -446,15 +437,14 @@
   "
   partially update the specified ClusterRoleBinding"
   ([name body ] (patch-rbac-authorization-v1-cluster-role-binding-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -469,15 +459,14 @@
   "
   partially update the specified Role"
   ([name namespace body ] (patch-rbac-authorization-v1-namespaced-role-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -492,15 +481,14 @@
   "
   partially update the specified RoleBinding"
   ([name namespace body ] (patch-rbac-authorization-v1-namespaced-role-binding-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -516,7 +504,6 @@
   read the specified ClusterRole"
   ([name ] (read-rbac-authorization-v1-cluster-role-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -538,7 +525,6 @@
   read the specified ClusterRoleBinding"
   ([name ] (read-rbac-authorization-v1-cluster-role-binding-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -560,7 +546,6 @@
   read the specified Role"
   ([name namespace ] (read-rbac-authorization-v1-namespaced-role-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -582,7 +567,6 @@
   read the specified RoleBinding"
   ([name namespace ] (read-rbac-authorization-v1-namespaced-role-binding-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -603,12 +587,11 @@
   "
   replace the specified ClusterRole"
   ([name body ] (replace-rbac-authorization-v1-cluster-role-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterroles/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -626,12 +609,11 @@
   "
   replace the specified ClusterRoleBinding"
   ([name body ] (replace-rbac-authorization-v1-cluster-role-binding-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -649,12 +631,11 @@
   "
   replace the specified Role"
   ([name namespace body ] (replace-rbac-authorization-v1-namespaced-role-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -672,12 +653,11 @@
   "
   replace the specified RoleBinding"
   ([name namespace body ] (replace-rbac-authorization-v1-namespaced-role-binding-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run ]}]
-   (check-required-params name namespace body)
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -695,12 +675,11 @@
   "
   watch changes to an object of kind ClusterRole. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-rbac-authorization-v1-cluster-role-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/clusterroles/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -717,12 +696,11 @@
   "
   watch changes to an object of kind ClusterRoleBinding. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-rbac-authorization-v1-cluster-role-binding-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/clusterrolebindings/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -739,11 +717,11 @@
   "
   watch individual changes to a list of ClusterRoleBinding. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-rbac-authorization-v1-cluster-role-binding-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/clusterrolebindings" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -760,11 +738,11 @@
   "
   watch individual changes to a list of ClusterRole. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-rbac-authorization-v1-cluster-role-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/clusterroles" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -781,12 +759,11 @@
   "
   watch changes to an object of kind Role. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-rbac-authorization-v1-namespaced-role-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/roles/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -803,12 +780,11 @@
   "
   watch changes to an object of kind RoleBinding. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name namespace ] (watch-rbac-authorization-v1-namespaced-role-binding-with-http-info name namespace nil))
-  ([name namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name namespace)
+  ([name namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/rolebindings/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -825,12 +801,11 @@
   "
   watch individual changes to a list of RoleBinding. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-rbac-authorization-v1-namespaced-role-binding-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/rolebindings" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -847,12 +822,11 @@
   "
   watch individual changes to a list of Role. deprecated: use the 'watch' parameter with a list operation instead."
   ([namespace ] (watch-rbac-authorization-v1-namespaced-role-list-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/namespaces/{namespace}/roles" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -869,11 +843,11 @@
   "
   watch individual changes to a list of RoleBinding. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-rbac-authorization-v1-role-binding-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/rolebindings" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -890,11 +864,11 @@
   "
   watch individual changes to a list of Role. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-rbac-authorization-v1-role-list-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/rbac.authorization.k8s.io/v1/watch/roles" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]

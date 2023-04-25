@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -eux
+
+export CODEGEN_VERSION=2.2.1
+export K8S_OPENAPI_ENDPOINT="/openapi/v2"
+export OPENAPI_DIFINITION="/tmp/openapi.json"
+export GENERATED_DIRECTORY="/tmp/openapi-generated"
+export TO_PATCH="${GENERATED_DIRECTORY}/src"
+
+##########################################
+# Prepare Tools
+##########################################
+
+cd "$(dirname "$0")"
+rm -rf ${GENERATED_DIRECTORY}
+
+if ! [ -f swagger-codegen-cli.jar ]; then
+    wget -q https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/${CODEGEN_VERSION}/swagger-codegen-cli-${CODEGEN_VERSION}.jar -O swagger-codegen-cli.jar
+fi
+
+##########################################
+# Export OpenAPI definition
+##########################################
+
+kubectl get --raw="${K8S_OPENAPI_ENDPOINT}" | jq > ${OPENAPI_DIFINITION}
+
+java -jar swagger-codegen-cli.jar \
+     generate \
+     -i ${OPENAPI_DIFINITION} \
+     -l clojure \
+     -o ${GENERATED_DIRECTORY} \
+     -c clojure-config.json $@
+
+##########################################
+# Merge directories
+##########################################
+
+cd ..
+rsync -avP ${TO_PATCH}/ src/

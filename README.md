@@ -5,9 +5,9 @@
   src="https://raw.githubusercontent.com/oscaro/clj-k8s/master/.github/logo.png"
   height="180" align="right"></a>
 
-
 A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
 
+See [OpenAPI specification](https://kubernetes.io/docs/concepts/overview/kubernetes-api/#api-specification) for more information.
 
 ## Generating Stubs
 

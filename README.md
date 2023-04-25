@@ -18,26 +18,10 @@ Stubs are generated with [OpenAPIGenerator](https://openapi-generator.tech/) fro
 
 $ kubectl version -o yaml
 clientVersion:
-  buildDate: "2023-01-18T22:38:55Z"
-  compiler: gc
-  gitCommit: 8f94681cd294aa8cfd3407b8191f6c70214973a4
-  gitTreeState: archive
   gitVersion: v1.26.1
-  goVersion: go1.19.5
-  major: "1"
-  minor: "26"
   platform: linux/amd64
-kustomizeVersion: v4.5.7
 serverVersion:
-  buildDate: "2023-01-18T15:51:25Z"
-  compiler: gc
-  gitCommit: 8f94681cd294aa8cfd3407b8191f6c70214973a4
-  gitTreeState: clean
   gitVersion: v1.26.1
-  goVersion: go1.19.5
-  major: "1"
-  minor: "26"
-
 
 $  bin/openapi-generate
 [...]
@@ -76,26 +60,6 @@ Client is modelized by a map, initialization function depend of your Kubernetes 
 - For environment variable, the `K8S_TOKEN` should be setup if not provided by argument
 
 The Authentification method is subjected to change in the future, with a generic function for context resolving. We recommand using the `from-spec` method for the moment.
-
-### Managing Kubernetes Objects
-
-TBD
-
-#### Namespaces
-
-TBD
-
-#### Pods
-
-TBD
-
-#### Jobs
-
-TBD
-
-#### Services
-
-TBD
 
 ## Testing
 

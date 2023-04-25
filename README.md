@@ -8,6 +8,42 @@
 
 A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
 
+## Generating Stubs
+
+Stubs are generated with [OpenAPIGenerator](https://openapi-generator.tech/) from OpenAPI 2.0/3.x Kubernetes API definition
+
+```bash
+# Check your kubernetes version:
+
+$ kubectl version -o yaml
+clientVersion:
+  buildDate: "2023-01-18T22:38:55Z"
+  compiler: gc
+  gitCommit: 8f94681cd294aa8cfd3407b8191f6c70214973a4
+  gitTreeState: archive
+  gitVersion: v1.26.1
+  goVersion: go1.19.5
+  major: "1"
+  minor: "26"
+  platform: linux/amd64
+kustomizeVersion: v4.5.7
+serverVersion:
+  buildDate: "2023-01-18T15:51:25Z"
+  compiler: gc
+  gitCommit: 8f94681cd294aa8cfd3407b8191f6c70214973a4
+  gitTreeState: clean
+  gitVersion: v1.26.1
+  goVersion: go1.19.5
+  major: "1"
+  minor: "26"
+
+
+$  bin/openapi-generate
+[...]
+
+$ git diff
+```
+
 ## API Usage
 
 ### Creating client instance

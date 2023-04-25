@@ -1,0 +1,5 @@
+{
+    "allowUnicodeIdentifiers": true,
+    "projectName": "kubernetes",
+    "projectDescription": "Clojure kubernetes client API stub"
+}

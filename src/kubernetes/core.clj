@@ -167,19 +167,19 @@
        (map (fn [[k v]] [k (normalize-param v)]))
        (into {})))
 
-(defn default-to-json-mime
-  "Default to JSON MIME if given */* MIME"
-  [mime]
-  (if (= mime "*/*")
-    "application/json"
-    mime))
-
 (defn json-mime?
   "Check if the given MIME is a standard JSON MIME or :json."
   [mime]
   (if mime
     (or (= :json mime)
         (re-matches #"(?i)application/json(;.*)?" (name mime)))))
+
+(defn default-to-json-mime
+  "Default to JSON MIME if given */* MIME"
+  [mime]
+  (if (= mime "*/*")
+    "application/json"
+    mime))
 
 (defn json-preferred-mime
   "Choose a MIME from the given MIMEs with JSON preferred,

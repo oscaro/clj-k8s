@@ -25,12 +25,11 @@
   "
   list objects of kind PodMetrics"
   ([namespace ] (list-metrics-v1beta1-namespaced-pod-metrics-with-http-info namespace nil))
-  ([namespace {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params namespace)
+  ([namespace {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/metrics.k8s.io/v1beta1/namespaces/{namespace}/pods" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -47,11 +46,11 @@
   "
   list objects of kind NodeMetrics"
   ([] (list-metrics-v1beta1-node-metrics-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/metrics.k8s.io/v1beta1/nodes" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -68,11 +67,11 @@
   "
   list objects of kind PodMetrics"
   ([] (list-metrics-v1beta1-pod-metrics-for-all-namespaces-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/metrics.k8s.io/v1beta1/pods" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -90,7 +89,6 @@
   read the specified PodMetrics"
   ([name namespace ] (read-metrics-v1beta1-namespaced-pod-metrics-with-http-info name namespace nil))
   ([name namespace {:keys [pretty ]}]
-   (check-required-params name namespace)
    (call-api "/apis/metrics.k8s.io/v1beta1/namespaces/{namespace}/pods/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
@@ -112,7 +110,6 @@
   read the specified NodeMetrics"
   ([name ] (read-metrics-v1beta1-node-metrics-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/apis/metrics.k8s.io/v1beta1/nodes/{name}" :get
              {:path-params   {"name" name }
               :header-params {}

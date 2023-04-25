@@ -6,12 +6,11 @@
   "
   create a LocalSubjectAccessReview"
   ([namespace body ] (create-authorization-v1-namespaced-local-subject-access-review-with-http-info namespace body nil))
-  ([namespace body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params namespace body)
+  ([namespace body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/apis/authorization.k8s.io/v1/namespaces/{namespace}/localsubjectaccessreviews" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -29,12 +28,11 @@
   "
   create a SelfSubjectAccessReview"
   ([body ] (create-authorization-v1-self-subject-access-review-with-http-info body nil))
-  ([body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params body)
+  ([body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/apis/authorization.k8s.io/v1/selfsubjectaccessreviews" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -52,12 +50,11 @@
   "
   create a SelfSubjectRulesReview"
   ([body ] (create-authorization-v1-self-subject-rules-review-with-http-info body nil))
-  ([body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params body)
+  ([body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/apis/authorization.k8s.io/v1/selfsubjectrulesreviews" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -75,12 +72,11 @@
   "
   create a SubjectAccessReview"
   ([body ] (create-authorization-v1-subject-access-review-with-http-info body nil))
-  ([body {:keys [dry-run include-uninitialized pretty ]}]
-   (check-required-params body)
+  ([body {:keys [dry-run field-manager field-validation pretty ]}]
    (call-api "/apis/authorization.k8s.io/v1/subjectaccessreviews" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"dryRun" dry-run "includeUninitialized" include-uninitialized "pretty" pretty }
+              :query-params  {"dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "pretty" pretty }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]

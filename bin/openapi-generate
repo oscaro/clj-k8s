@@ -25,7 +25,7 @@ fi
 
 kubectl get --raw="${K8S_OPENAPI_ENDPOINT}" | jq > ${OPENAPI_DIFINITION}
 
-exec java -jar swagger-codegen-cli.jar \
+java -jar swagger-codegen-cli.jar \
      generate \
      -i ${OPENAPI_DIFINITION} \
      -l clojure \
@@ -37,4 +37,4 @@ exec java -jar swagger-codegen-cli.jar \
 ##########################################
 
 cd ..
-cp -rf ${TO_PATCH} src/
+rsync -avP ${TO_PATCH}/ src/

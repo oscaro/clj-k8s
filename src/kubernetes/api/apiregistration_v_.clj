@@ -6,12 +6,11 @@
   "
   create an APIService"
   ([body ] (create-apiregistration-v1-api-service-with-http-info body nil))
-  ([body {:keys [include-uninitialized pretty dry-run ]}]
-   (check-required-params body)
+  ([body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices" :post
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -30,7 +29,6 @@
   delete an APIService"
   ([name ] (delete-apiregistration-v1-api-service-with-http-info name nil))
   ([name {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (check-required-params name)
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}" :delete
              {:path-params   {"name" name }
               :header-params {}
@@ -52,12 +50,13 @@
   "
   delete collection of APIService"
   ([] (delete-apiregistration-v1-collection-api-service-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty body continue dry-run field-selector grace-period-seconds label-selector limit orphan-dependents propagation-policy resource-version resource-version-match timeout-seconds ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "continue" continue "dryRun" dry-run "fieldSelector" field-selector "gracePeriodSeconds" grace-period-seconds "labelSelector" label-selector "limit" limit "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds }
               :form-params   {}
+              :body-param    body
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
@@ -92,11 +91,11 @@
   "
   list or watch objects of kind APIService"
   ([] (list-apiregistration-v1-api-service-with-http-info nil))
-  ([{:keys [include-uninitialized pretty continue field-selector label-selector limit resource-version timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"includeUninitialized" include-uninitialized "pretty" pretty "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -113,15 +112,14 @@
   "
   partially update the specified APIService"
   ([name body ] (patch-apiregistration-v1-api-service-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -136,15 +134,14 @@
   "
   partially update status of the specified APIService"
   ([name body ] (patch-apiregistration-v1-api-service-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
-              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json"]
+              :content-types ["application/json-patch+json" "application/merge-patch+json" "application/strategic-merge-patch+json" "application/apply-patch+yaml"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
               :auth-names    ["BearerToken"]})))
 
@@ -159,12 +156,11 @@
   "
   read the specified APIService"
   ([name ] (read-apiregistration-v1-api-service-with-http-info name nil))
-  ([name {:keys [pretty exact export ]}]
-   (check-required-params name)
+  ([name {:keys [pretty ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "exact" exact "export" export }
+              :query-params  {"pretty" pretty }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf"]
@@ -182,7 +178,6 @@
   read status of the specified APIService"
   ([name ] (read-apiregistration-v1-api-service-status-with-http-info name nil))
   ([name {:keys [pretty ]}]
-   (check-required-params name)
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}/status" :get
              {:path-params   {"name" name }
               :header-params {}
@@ -203,12 +198,11 @@
   "
   replace the specified APIService"
   ([name body ] (replace-apiregistration-v1-api-service-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -226,12 +220,11 @@
   "
   replace status of the specified APIService"
   ([name body ] (replace-apiregistration-v1-api-service-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run ]}]
-   (check-required-params name body)
+  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/apiservices/{name}/status" :put
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
               :form-params   {}
               :body-param    body
               :content-types ["*/*"]
@@ -249,12 +242,11 @@
   "
   watch changes to an object of kind APIService. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter."
   ([name ] (watch-apiregistration-v1-api-service-with-http-info name nil))
-  ([name {:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
-   (check-required-params name)
+  ([name {:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/watch/apiservices/{name}" :get
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]
@@ -271,11 +263,11 @@
   "
   watch individual changes to a list of APIService. deprecated: use the 'watch' parameter with a list operation instead."
   ([] (watch-apiregistration-v1-api-service-list-with-http-info nil))
-  ([{:keys [continue field-selector include-uninitialized label-selector limit pretty resource-version timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
    (call-api "/apis/apiregistration.k8s.io/v1/watch/apiservices" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"continue" continue "fieldSelector" field-selector "includeUninitialized" include-uninitialized "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["*/*"]
               :accepts       ["application/json" "application/yaml" "application/vnd.kubernetes.protobuf" "application/json;stream=watch" "application/vnd.kubernetes.protobuf;stream=watch"]

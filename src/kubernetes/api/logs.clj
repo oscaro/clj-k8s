@@ -5,7 +5,6 @@
 (defn log-file-handler-with-http-info
   ""
   [logpath ]
-  (check-required-params logpath)
   (call-api "/logs/{logpath}" :get
             {:path-params   {"logpath" logpath }
              :header-params {}

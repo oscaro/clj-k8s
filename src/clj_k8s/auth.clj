@@ -72,7 +72,7 @@
 
 (def token-from-env
   "Token from environnement"
-  (str (System/getenv "K8S_TOKEN")))
+  (str (System/getenv "KUBERNETES_TOKEN")))
 
 (defn from-token
   "Creates a context from the kubectl config file"

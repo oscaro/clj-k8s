@@ -27,7 +27,7 @@
       "/var/run/secrets/kubernetes.io/serviceaccount"))
 
 ;;; Kubernetes Token
-(defonce ^:private token-from-env (str (System/getenv "K8S_TOKEN")))
+(defonce ^:private token-from-env (str (System/getenv "KUBERNETES_TOKEN")))
 
 ;;; Honor `KUBECONFIG` before generating fallback one from
 ;;; the user `HOME`

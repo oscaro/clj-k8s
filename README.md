@@ -65,8 +65,13 @@ The Authentification method is subjected to change in the future, with a generic
 
 ### Setup Minikube
 
+Setup a minikube cluster and setup token & environnement variables as follow:
+
 ```bash
-minikube start --driver=podman
+$ source bin/source-minikube
+
+$ echo $KUBERNETES_TOKEN
+ey...
 ```
 
 ### Create API Token

@@ -109,9 +109,6 @@
 
 ;;; Api Utils
 
-(defn active-ns []
-  (:namespace k/*api-context*))
-
 (defmacro with-api-context
   "A helper macro to wrap *api-context*
    with default values."
@@ -124,10 +121,15 @@
        ~@body)))
 
 
+(defn active-ns [spec]
+  (with-api-context spec
+    (:namespace k/*api-context*)))
+
 ;;; Namespaces
 
 (defn create-namespace
   "Create a new namespace"
+  {:added "1.25.8.2"}
   ([spec ns-spec] (create-namespace spec ns-spec {}))
   ([spec ns-spec opts]
    (let [ns-spec (if (string? ns-spec)
@@ -137,7 +139,8 @@
 
 
 (defn get-namespace
-  "Retrieve current"
+  "Retrieve informations about the selected namespace"
+  {:added "1.25.8.2"}
   ([spec n] (get-namespace spec n {}))
   ([spec n opts]
    (with-api-context spec
@@ -146,7 +149,8 @@
 
 
 (defn delete-namespace
-  "Retrieve current"
+  "Delete the selected namespace"
+  {:added "1.25.8.2"}
   ([spec] (delete-namespace spec {}))
   ([spec opts]
    (with-api-context spec

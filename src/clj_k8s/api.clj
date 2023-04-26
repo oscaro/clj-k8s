@@ -2,10 +2,12 @@
   (:require [yaml.core :as yaml]
             [schema.core :as s]
             [clj-k8s.gke :as gke]
-            [clj-k8s.utils :refer [find-named]]
+            [clj-k8s.utils :refer [find-named not-found->nil]]
             [clj-k8s.models :refer :all]
             [clojure.java.io :as io]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [kubernetes.core :as k]
+            [kubernetes.api.core-v- :as kc]))
 
 ;;; =====================================
 ;;;  Public API
@@ -38,7 +40,7 @@
 (def running-from-kube?
   "Detect if the application is currently running on k8s
    platform, or not"
-  (and (.exists (io/file "/var/run/secrets/kubernetes.io/serviceaccount"))
+  (and (.exists (io/file default-cluster-service-account-dir))
        (every? some? [default-k8s-svc-host default-k8s-svc-port])))
 
 (defn- is-current-gke?
@@ -104,3 +106,49 @@
      {:base-url  (get-in cluster [:cluster :server])
       :auths     {"BearerToken" (str "Bearer " token)}
       :namespace (get-in context [:context :namespace] default-ns)})))
+
+;;; Api Utils
+
+(defn active-ns []
+  (:namespace k/*api-context*))
+
+(defmacro with-api-context
+  "A helper macro to wrap *api-context*
+   with default values."
+  [api-context & body]
+  `(let [api-context# ~api-context
+         api-context# (-> k/*api-context*
+                          (merge api-context#)
+                          (assoc :auths (merge (:auths k/*api-context*) (:auths api-context#))))]
+     (binding [k/*api-context* api-context#]
+       ~@body)))
+
+
+;;; Namespaces
+
+(defn create-namespace
+  "Create a new namespace"
+  ([spec ns-spec] (create-namespace spec ns-spec {}))
+  ([spec ns-spec opts]
+   (let [ns-spec (if (string? ns-spec)
+                   {:metadata {:name ns-spec}} ns-spec)]
+     (with-api-context spec
+       (kc/create-core-v1-namespace ns-spec opts)))))
+
+
+(defn get-namespace
+  "Retrieve current"
+  ([spec n] (get-namespace spec n {}))
+  ([spec n opts]
+   (with-api-context spec
+     (not-found->nil
+      (kc/read-core-v1-namespace n opts)))))
+
+
+(defn delete-namespace
+  "Retrieve current"
+  ([spec] (delete-namespace spec {}))
+  ([spec opts]
+   (with-api-context spec
+     (not-found->nil
+      (kc/read-core-v1-namespace spec opts)))))

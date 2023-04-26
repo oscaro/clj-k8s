@@ -1,9 +1,7 @@
 (ns test-helper
-  (:require [clj-k8s
-             [auth :as auth]
-             [core :as c]]
+  (:require [clj-k8s.api :as k]
             [clojure.walk :as w]
-            [kubernetes.core :as k])
+            [kubernetes.core :as kc])
   (:import (java.util.concurrent TimeUnit)
            (java.util UUID)))
 
@@ -13,9 +11,9 @@
   "Fixture for initializing the k8s context"
   ([f] (with-context false f))
   ([debug? f]
-   (let [ctx (cond-> (auth/from-token)
+   (let [ctx (cond-> (k/mk-client)
                debug? (assoc :debug true))]
-     (c/with-api-context ctx
+     (k/with-api-context ctx
        (f)))))
 
 
@@ -24,12 +22,11 @@
   [f]
   (binding [*namespace* (str "test-" (UUID/randomUUID))]
     (try
-      (c/create-namespace *namespace*)
-      (binding [k/*api-context* (assoc k/*api-context* :namespace *namespace*)]
+      (k/create-namespace *namespace*)
+      (binding [kc/*api-context* (assoc kc/*api-context* :namespace *namespace*)]
         (f))
       (finally
-        (c/delete-namespace *namespace*)))))
-
+        (k/delete-namespace *namespace*)))))
 
 
 (def excludes

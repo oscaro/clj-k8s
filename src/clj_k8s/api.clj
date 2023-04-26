@@ -182,6 +182,32 @@
       (kc/create-core-v1-namespaced-endpoints ep-spec namespace opts)))))
 
 
+;;; Pods
+
+
+(defn list-pods
+  "List or watch pods"
+  {:added "1.25.8.2"}
+  ([spec] (list-pods spec {}))
+  ([spec {:keys [namespace all-namespaces]
+          :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (let [opts (update opts :label-selector ->label-selector)]
+       (:items
+        (if all-namespaces
+          (kc/list-core-v1-pod-for-all-namespaces opts)
+          (kc/list-core-v1-namespaced-pod namespace opts)))))))
+
+
+(defn pod-logs
+  "Reads the logs of a specific pod"
+  {:added "1.25.8.2"}
+  ([spec n] (pod-logs spec n {}))
+  ([spec n {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (kc/read-core-v1-namespaced-pod-log n namespace opts))))
+
+
 ;;; Jobs Batch
 
 

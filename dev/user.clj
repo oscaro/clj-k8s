@@ -15,4 +15,9 @@
   (k/get-namespace client "foobar")
   (k/create-namespace client "foobar")
   (k/delete-namespace client "foobar")
+
+  ;; Endpoints
+
+  (pprint (k/get-endpoints client "kubernetes"))
+  (k/get-job client "foo" {:namespace "foo"})
   )

@@ -16,3 +16,8 @@
       (is (nil? (k/delete-namespace *client* generated-ns)))
       (is (= (get-in (k/create-namespace *client* generated-ns) [:metadata :name]) generated-ns))
       (is (= (:status (k/delete-namespace *client* generated-ns)) {:phase "Terminating"} )))))
+
+(deftest endpoints-test
+  (testing "endpoints are properly fetched"
+    (is (nil? (k/get-endpoints *client* "nop")))
+    (is (= (get-in (k/get-endpoints *client* "kubernetes") [:subsets 0 :ports 0 :port]) 8443))))

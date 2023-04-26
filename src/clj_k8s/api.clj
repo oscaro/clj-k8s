@@ -2,12 +2,14 @@
   (:require [yaml.core :as yaml]
             [schema.core :as s]
             [clj-k8s.gke :as gke]
-            [clj-k8s.utils :refer [find-named not-found->nil]]
+            [clj-k8s.utils :refer [find-named not-found->nil
+                                   ->label-selector]]
             [clj-k8s.models :refer :all]
             [clojure.java.io :as io]
             [clojure.string :as str]
             [kubernetes.core :as k]
-            [kubernetes.api.core-v- :as kc]))
+            [kubernetes.api.core-v- :as kc]
+            [kubernetes.api.batch-v- :as kb]))
 
 ;;; =====================================
 ;;;  Public API
@@ -156,3 +158,86 @@
    (with-api-context spec
      (not-found->nil
       (kc/delete-core-v1-namespace ns opts)))))
+
+;;; Endpoints
+
+(defn get-endpoints
+  "Fetches the specified endpoints or
+   returns nil if not found"
+  {:added "1.25.8.2"}
+  ([spec ns] (get-endpoints spec ns {}))
+  ([spec ep-name {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (not-found->nil
+      (kc/read-core-v1-namespaced-endpoints ep-name namespace opts)))))
+
+
+(defn create-endpoint
+  "Create a new endpoint"
+  {:added "1.25.8.2"}
+  ([spec ep-spec] (create-endpoint spec ep-spec {}))
+  ([spec ep-spec {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (not-found->nil
+      (kc/create-core-v1-namespaced-endpoints ep-spec namespace opts)))))
+
+
+;;; Jobs Batch
+
+
+(defn get-job
+  "Fetches the specified job or returns nil if not found"
+  {:added "1.25.8.2"}
+  ([spec n] (get-job spec n {}))
+  ([spec n {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (not-found->nil
+      (kb/read-batch-v1-namespaced-job n namespace opts)))))
+
+
+(defn list-jobs
+  "List or watch jobs"
+  {:added "1.25.8.2"}
+  ([spec] (list-jobs spec {}))
+  ([spec {:keys [namespace all-namespaces] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (let [opts (update opts :label-selector ->label-selector)]
+       (:items
+        (if all-namespaces
+          (kb/list-batch-v1-job-for-all-namespaces opts)
+          (kb/list-batch-v1-namespaced-job namespace opts)))))))
+
+
+(defn submit-job
+  "Submits a job for execution"
+  {:added "1.25.8.2"}
+  ([spec job-spec] (submit-job spec job-spec {}))
+  ([spec job-spec opts]
+   (with-api-context spec
+     (let [job-ns (get-in job-spec [:metadata :namespace] default-ns)]
+       (kb/create-batch-v1-namespaced-job job-ns job-spec opts)))))
+
+
+(defn delete-job
+  "Deletes a job"
+  {:added "1.25.8.2"}
+  ([spec n] (delete-job spec n {}))
+  ([spec n {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (let [opts (merge {:propagation-policy "Foreground"} opts)]
+       (kb/delete-batch-v1-namespaced-job n namespace opts)))))
+
+
+(defn job-pods
+  "Fetches all of the pods belonging to a specific job"
+  {:added "1.25.8.2"}
+  ([spec n] (job-pods spec n {}))
+  ([spec n opts]
+   (with-api-context spec
+     (if-let [job (get-job spec n opts)]
+       (->> (get-in job [:spec :selector :matchLabels :controller-uid])
+            (str "controller-uid=")
+            (assoc opts :label-selector)
+            (kc/list-core-v1-namespaced-pod (get-in job [:metadata :namespace]))
+            :items)
+       []))))

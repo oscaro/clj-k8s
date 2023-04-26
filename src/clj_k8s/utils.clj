@@ -26,3 +26,29 @@
     (->> labels
          (map (fn [[k v]] (format "%s=%s" (name k) v)))
          (str/join ","))))
+
+;;; Kubernetes Related Predicates
+
+(defn- current-condition
+  [{:keys [conditions]}]
+  (->> conditions
+       (filter #(= (:status %) "True"))
+       first))
+
+
+(defn running?
+  "Returns true if the job is still running"
+  [{:keys [status]}]
+  (boolean (and status (nil? (current-condition status)))))
+
+
+(defn succeeded?
+  "Returns true if the job was successful"
+  [{:keys [status]}]
+  (= (:type (current-condition status)) "Complete"))
+
+
+(defn failed?
+  "Returns true if the job failed"
+  [{:keys [status]}]
+  (or (nil? status) (= (:type (current-condition status)) "Failed")))

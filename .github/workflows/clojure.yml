@@ -56,7 +56,8 @@ jobs:
 
     - name: Generate documentation
       if: github.ref == 'refs/heads/master'
-      run: lein marg -d public -f index.html
+      # Remove stubs
+      run: lein marg -e src/kubernetes -d public -f index.html
 
     - name: Deploy documentation to Github Pages
       uses: JamesIves/github-pages-deploy-action@v4.3.3

@@ -11,6 +11,8 @@
 (comment
 
   (k/active-ns client)
-  (k/get-namespace client "default")
+  ;; Namespace
+  (k/get-namespace client "foobar")
   (k/create-namespace client "foobar")
+  (k/delete-namespace client "foobar")
   )

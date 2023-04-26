@@ -151,8 +151,8 @@
 (defn delete-namespace
   "Delete the selected namespace"
   {:added "1.25.8.2"}
-  ([spec] (delete-namespace spec {}))
-  ([spec opts]
+  ([spec ns] (delete-namespace spec ns {}))
+  ([spec ns opts]
    (with-api-context spec
      (not-found->nil
-      (kc/read-core-v1-namespace spec opts)))))
+      (kc/delete-core-v1-namespace ns opts)))))

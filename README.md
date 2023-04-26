@@ -61,6 +61,18 @@ Client is modelized by a map, initialization function depend of your Kubernetes 
 
 The Authentification method is subjected to change in the future, with a generic function for context resolving. We recommand using the `from-spec` method for the moment.
 
+## API Methods
+
+### Namespaces
+
+```clojure
+(require [clj-k8s.api :as k])
+
+(k/get-namespace client "default")
+(k/create-namespace client "foobar")
+(k/delete-namespace client "foobar")
+```
+
 ## Testing
 
 ### Setup Minikube

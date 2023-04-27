@@ -99,7 +99,7 @@
                                :namespace (or namespace default-ns)}))
      (mk-client kube-config token-from-env)))
   ([kube-config token]
-   (let [{:keys [clusters contexts current-context] :as conf}
+   (let [{:keys [clusters contexts current-context]}
          (yaml/from-file kube-config)
          context (find-named current-context contexts)
          cluster (find-named (get-in context [:context :cluster]) clusters)

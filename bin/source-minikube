@@ -1,0 +1,8 @@
+#!/bin/bash
+
+minikube start --driver=podman
+
+kubectl -n kube-system create serviceaccount toast
+kubectl -n kube-system create clusterrolebinding toast-bind --clusterrole=cluster-admin --serviceaccount=kube-system:toast
+
+export KUBERNETES_TOKEN=$(kubectl -n kube-system create token toast)

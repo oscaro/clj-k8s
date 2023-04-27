@@ -8,6 +8,7 @@
             [clojure.java.io :as io]
             [clojure.string :as str]
             [kubernetes.core :as k]
+            [kubernetes.api.version :as kv]
             [kubernetes.api.core-v- :as kc]
             [kubernetes.api.batch-v- :as kb]))
 
@@ -127,6 +128,15 @@
   (with-api-context spec
     (:namespace k/*api-context*)))
 
+;;; Version
+
+(defn cluster-version
+  "Retrieve remote cluster build informations"
+  {:added "1.25.8.2"}
+  ([spec]
+   (with-api-context spec
+     (kv/get-code-version))))
+
 ;;; Namespaces
 
 (defn create-namespace
@@ -184,7 +194,6 @@
 
 ;;; Pods
 
-
 (defn list-pods
   "List or watch pods"
   {:added "1.25.8.2"}
@@ -199,13 +208,34 @@
           (kc/list-core-v1-namespaced-pod namespace opts)))))))
 
 
+(defn get-pod
+  "Retrieve pod informations"
+  {:added "1.25.8.2"}
+  ([spec pod-name] (get-pod spec pod-name {}))
+  ([spec pod-name {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (not-found->nil
+      (kc/read-core-v1-namespaced-pod pod-name namespace opts)))))
+
+
+(defn delete-pod
+  "Delete a pod by his name"
+  {:added "1.25.8.2"}
+  ([spec pod-name] (get-pod spec pod-name {}))
+  ([spec pod-name {:keys [namespace] :or {namespace default-ns} :as opts}]
+   (with-api-context spec
+     (not-found->nil
+      (kc/delete-core-v1-namespaced-pod pod-name namespace opts)))))
+
+
 (defn pod-logs
   "Reads the logs of a specific pod"
   {:added "1.25.8.2"}
   ([spec n] (pod-logs spec n {}))
   ([spec n {:keys [namespace] :or {namespace default-ns} :as opts}]
    (with-api-context spec
-     (kc/read-core-v1-namespaced-pod-log n namespace opts))))
+     (not-found->nil
+      (kc/read-core-v1-namespaced-pod-log n namespace opts)))))
 
 
 ;;; Jobs Batch
@@ -219,7 +249,6 @@
    (with-api-context spec
      (not-found->nil
       (kb/read-batch-v1-namespaced-job n namespace opts)))))
-
 
 (defn list-jobs
   "List or watch jobs"

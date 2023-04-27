@@ -6,7 +6,7 @@
 
 (def client
   (k/mk-client {:base-url "https://192.168.49.2:8443"
-                :token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjZFbXRZUE9NNEVEbXdKcVhTekhhX19KOGpVX3RLR0owZXhmVUtJdlo1d0UifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNjgyNTM2MDU2LCJpYXQiOjE2ODI1MzI0NTYsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJ0b2FzdCIsInVpZCI6ImZkNDU2ZjA3LWJkMjAtNDhjZi1hZGE4LTk4ZjFkMTUwYjYwNyJ9fSwibmJmIjoxNjgyNTMyNDU2LCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06dG9hc3QifQ.YXRZIUIVVM_TgqP4lhygmzkLTHtpIY-C6SljXtqQlH2xg9JmZfr0gnReUiACYGzKGYfOBlM3nVzAS5v4yBSHLJ9wNLzPOQ45biVax5w2_XytUxcH3aNoiCueKyU4SrMGwW6z1n7sVNf6yQPvwt2Qh6JpWdQrt6x__Ve4fUiY0DU59_xc2UxtPMtv9nVOdMJiF-ssiFrTj2q2hB_NEoPdnpvOgHO0bJmvWBVWJJtYqtW8dn57dITh-LsF92jVYqStoLz-KtByuFtMRwH4s_hZcHkXAVVs5VXQdo4dco_vzIGdMx8ngGgB6plYaqGj0uCiTNW3rHlfixtyXwj-bpZXqg"}))
+                :token "eyJhbGciOiJSUzI1NiIsImtpZCI6IjZFbXRZUE9NNEVEbXdKcVhTekhhX19KOGpVX3RLR0owZXhmVUtJdlo1d0UifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzE4NTc5NDUxLCJpYXQiOjE2ODI1ODMwNTEsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJ0b2FzdCIsInVpZCI6ImZkNDU2ZjA3LWJkMjAtNDhjZi1hZGE4LTk4ZjFkMTUwYjYwNyJ9fSwibmJmIjoxNjgyNTgzMDUxLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06dG9hc3QifQ.v2M_KW7vE6boxq8TJcUHdRV6MzQjfVIA8Qx6TEAOnEASIJa0KpuCNt4Pz0_s54-pPBeBIaLfXUKvyMnl0sbm4qv9WI0TVQhCuJ2WNv_XZx0Sp7_Y_U2fLEWLLD-1nOtaDXF-o_s2t8tAkphYK9DP-nqSIK8L_GOhrAo6akb7DeIvRlEQj3PfhdbTAr6KOb_lVchCCnxyBM_DFjBn35U9YRiUkWFczaZHnKOhLztJhTSq3lTjzfVZ99dU04k9myNViER4HQMbl1D6xLMeK9Zryvrw0jiY_is-Sf0BapiMpuvZ81Mhxb4jSs5X3n2RuTNNNYTqlXgF4qVXuK68na0N1A"}))
 
 (comment
 
@@ -18,11 +18,14 @@
 
   ;; Endpoints
 
+  (k/cluster-version client)
   (pprint (k/get-endpoints client "kubernetes"))
 
   ;; Jobs
 
   ;; Pods
 
-   (count (k/list-pods client {:namespace "kube-system"}))
+  (->> (map #(get-in % [:metadata :name]) (k/list-pods client {:namespace "kube-system"}))
+       pprint)
+
   )

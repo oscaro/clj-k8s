@@ -1,35 +1,35 @@
 (ns test-helper
-  (:require [clj-k8s
-             [auth :as auth]
-             [core :as c]]
+  (:require [clj-k8s.api :as k]
             [clojure.walk :as w]
-            [kubernetes.core :as k])
+            [kubernetes.core :as kc])
   (:import (java.util.concurrent TimeUnit)
            (java.util UUID)))
 
-(def ^:dynamic *namespace* nil)
+;;; =====================================
+;;;  Test Helpers
+;;; ====================================
 
-(defn with-context
-  "Fixture for initializing the k8s context"
-  ([f] (with-context false f))
-  ([debug? f]
-   (let [ctx (cond-> (auth/from-token)
-               debug? (assoc :debug true))]
-     (c/with-api-context ctx
-       (f)))))
+(def ^:dynamic *namespace* nil)
+(def ^:dynamic *client* nil)
+
+
+(defn with-client
+  "Fixture for creating a client in test context"
+  [f]
+  (binding [*client* (k/mk-client)]
+    (f)))
 
 
 (defn with-namespace
-  "Fixture for creating a test namespace"
+  "Fixture for creating a test namespace in test context"
   [f]
   (binding [*namespace* (str "test-" (UUID/randomUUID))]
     (try
-      (c/create-namespace *namespace*)
-      (binding [k/*api-context* (assoc k/*api-context* :namespace *namespace*)]
+      (k/create-namespace *client* *namespace*)
+      (binding [kc/*api-context* (assoc kc/*api-context* :namespace *namespace*)]
         (f))
       (finally
-        (c/delete-namespace *namespace*)))))
-
+        (k/delete-namespace *client* *namespace*)))))
 
 
 (def excludes
@@ -41,9 +41,12 @@
 
 (defn clean-response
   [r & more-excludes]
-  (w/postwalk (fn [x] (if (map? x)
-                       (apply dissoc x (concat excludes more-excludes))
-                       x)) r))
+  (w/postwalk
+   (fn [x]
+     (if (map? x)
+       (apply dissoc x (concat excludes more-excludes))
+       x))
+   r))
 
 
 (defn sleep-secs [secs] (.sleep TimeUnit/SECONDS secs))

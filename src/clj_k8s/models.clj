@@ -9,3 +9,8 @@
   {:token s/Str
    :base-url s/Str
    (s/optional-key :namespace) s/Str})
+
+(s/defschema KubeClient
+  {:base-url s/Str
+   :auths {s/Str s/Str}
+   :namespace s/Str})

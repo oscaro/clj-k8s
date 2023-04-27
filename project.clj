@@ -1,4 +1,4 @@
-(defproject com.oscaro/clj-k8s "1.25.8.1"
+(defproject com.oscaro/clj-k8s "1.25.8.2"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"
   :deploy-repositories [["snapshots" {:url "https://repo.clojars.org"
@@ -24,7 +24,8 @@
                  [com.fasterxml.jackson.core/jackson-core         "2.15.0"]]
   :min-lein-version "2.8.0"
   :resource-paths ["resources"]
-  :plugins [[lein-marginalia "0.9.1"]]
+  :plugins [[lein-marginalia "0.9.1"]
+            [lein-cloverage  "1.2.2"]]
   :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.4"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}}

@@ -2,11 +2,32 @@
 
 
 <a href="https://github.com/oscaro/clj-k8s"><img
-  src="https://raw.githubusercontent.com/oscaro/clj-k8s/master/.github/logo.png?token=GHSAT0AAAAAABPEZ3KWWLL3OT6CE54XM4IQZCCXZVQ"
+  src="https://raw.githubusercontent.com/oscaro/clj-k8s/master/.github/logo.png"
   height="180" align="right"></a>
 
-
 A Clojure Wrapper for the [kubernetes](https://kubernetes.io/) API.
+
+See [OpenAPI specification](https://kubernetes.io/docs/concepts/overview/kubernetes-api/#api-specification) for more information.
+
+## Generating Stubs
+
+Stubs are generated with [OpenAPIGenerator](https://openapi-generator.tech/) from OpenAPI 2.0/3.x Kubernetes API definition
+
+```bash
+# Check your kubernetes version:
+
+$ kubectl version -o yaml
+clientVersion:
+  gitVersion: v1.26.1
+  platform: linux/amd64
+serverVersion:
+  gitVersion: v1.26.1
+
+$  bin/openapi-generate
+[...]
+
+$ git diff
+```
 
 ## API Usage
 
@@ -40,32 +61,29 @@ Client is modelized by a map, initialization function depend of your Kubernetes 
 
 The Authentification method is subjected to change in the future, with a generic function for context resolving. We recommand using the `from-spec` method for the moment.
 
-### Managing Kubernetes Objects
+## API Methods
 
-TBD
+### Namespaces
 
-#### Namespaces
+```clojure
+(require [clj-k8s.api :as k])
 
-TBD
-
-#### Pods
-
-TBD
-
-#### Jobs
-
-TBD
-
-#### Services
-
-TBD
+(k/get-namespace client "default")
+(k/create-namespace client "foobar")
+(k/delete-namespace client "foobar")
+```
 
 ## Testing
 
 ### Setup Minikube
 
+Setup a minikube cluster and setup token & environnement variables as follow:
+
 ```bash
-minikube start --driver=podman
+$ source bin/source-minikube
+
+$ echo $KUBERNETES_TOKEN
+ey...
 ```
 
 ### Create API Token

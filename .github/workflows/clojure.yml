@@ -49,11 +49,11 @@ jobs:
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
 
-    - name: Coveralls
-      if: github.ref == 'refs/heads/master'
-      uses: coverallsapp/github-action@v2
-      with:
-        base-path: cov/
+    # - name: Coveralls
+    #   if: github.ref == 'refs/heads/master'
+    #   uses: coverallsapp/github-action@v2
+    #   with:
+    #     base-path: cov/
 
     ###################################
     # Generate release

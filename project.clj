@@ -25,8 +25,13 @@
   :min-lein-version "2.8.0"
   :resource-paths ["resources"]
   :plugins [[lein-marginalia "0.9.1"]
-            [lein-cloverage  "1.2.2"]]
+            [lein-cloverage  "1.2.2"]
+            [lein-shell      "0.5.0"]]
   :profiles {:dev {:dependencies   [[org.clojure/tools.namespace "1.4.4"]]
                    :source-paths   ["dev"]
                    :resource-paths ["dev-resources"]}}
+  :aliases {"coverage" ["do" ["cloverage" "--coveralls"]
+                        ["shell" "curl" "-F"
+                         "json_file=@target/coverage/coveralls.json"
+                         "https://coveralls.io/api/v1/jobs"]]}
   :global-vars {*warn-on-reflection* true})

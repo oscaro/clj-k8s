@@ -9,6 +9,13 @@
   with-client
   with-namespace)
 
+(deftest version-test
+  (testing "version endpoint is functional"
+    (is (= [:buildDate :gitCommit :gitTreeState :major :compiler
+            :goVersion :minor :gitVersion :platform]
+           (keys (k/cluster-version *client*))))))
+
+
 (deftest namespaces-test
   (testing "namespace interactions"
     (let [generated-ns (str (UUID/randomUUID))]
@@ -16,6 +23,7 @@
       (is (nil? (k/delete-namespace *client* generated-ns)))
       (is (= (get-in (k/create-namespace *client* generated-ns) [:metadata :name]) generated-ns))
       (is (= (:status (k/delete-namespace *client* generated-ns)) {:phase "Terminating"} )))))
+
 
 (deftest endpoints-test
   (testing "endpoints are properly fetched"

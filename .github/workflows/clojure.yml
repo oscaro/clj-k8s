@@ -40,6 +40,20 @@ jobs:
       run: lein test
 
     ###################################
+    # Code Coverage
+    ###################################
+
+    - name: Generate Coverage Report
+      if: github.ref == 'refs/heads/master'
+      run: lein cloverage --coveralls
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+
+    - name: Coveralls
+      if: github.ref == 'refs/heads/master'
+      uses: coverallsapp/github-action@v2
+
+    ###################################
     # Generate release
     ###################################
 

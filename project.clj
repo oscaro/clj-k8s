@@ -1,4 +1,4 @@
-(defproject com.oscaro/clj-k8s "1.29.1.0-SNAPSHOT"
+(defproject com.oscaro/clj-k8s "1.29.1.1-SNAPSHOT"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :description "Clojure kubernetes client API stub"

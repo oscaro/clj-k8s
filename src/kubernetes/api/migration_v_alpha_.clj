@@ -50,11 +50,11 @@
   "
   delete collection of StorageState"
   ([] (delete-migration-v1alpha1-collection-storage-state-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storagestates" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -71,11 +71,11 @@
   "
   delete collection of StorageVersionMigration"
   ([] (delete-migration-v1alpha1-collection-storage-version-migration-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storageversionmigrations" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -136,11 +136,11 @@
   "
   list objects of kind StorageState"
   ([] (list-migration-v1alpha1-storage-state-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storagestates" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -157,11 +157,11 @@
   "
   list objects of kind StorageVersionMigration"
   ([] (list-migration-v1alpha1-storage-version-migration-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storageversionmigrations" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -178,11 +178,11 @@
   "
   partially update the specified StorageState"
   ([name body ] (patch-migration-v1alpha1-storage-state-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storagestates/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -200,11 +200,11 @@
   "
   partially update status of the specified StorageState"
   ([name body ] (patch-migration-v1alpha1-storage-state-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storagestates/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -222,11 +222,11 @@
   "
   partially update the specified StorageVersionMigration"
   ([name body ] (patch-migration-v1alpha1-storage-version-migration-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storageversionmigrations/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -244,11 +244,11 @@
   "
   partially update status of the specified StorageVersionMigration"
   ([name body ] (patch-migration-v1alpha1-storage-version-migration-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/migration.k8s.io/v1alpha1/storageversionmigrations/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]

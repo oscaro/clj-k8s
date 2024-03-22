@@ -1,13 +1,13 @@
-(ns kubernetes.api.cloud-google-com-v-beta-
+(ns kubernetes.api.internal-autoscaling-gke-io-v-
   (:require [kubernetes.core :refer [call-api check-required-params with-collection-format]])
   (:import (java.io File)))
 
-(defn create-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn create-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  create a BackendConfig"
-  ([namespace body ] (create-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info namespace body nil))
+  create a CapacityRequest"
+  ([namespace body ] (create-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info namespace body nil))
   ([namespace body {:keys [pretty dry-run field-manager field-validation ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs" :post
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests" :post
              {:path-params   {"namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
@@ -17,19 +17,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn create-cloud-google-com-v1beta1-namespaced-backend-config
+(defn create-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  create a BackendConfig"
-  ([namespace body ] (create-cloud-google-com-v1beta1-namespaced-backend-config namespace body nil))
+  create a CapacityRequest"
+  ([namespace body ] (create-internal-autoscaling-gke-io-v1-namespaced-capacity-request namespace body nil))
   ([namespace body optional-params]
-   (:data (create-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info namespace body optional-params))))
+   (:data (create-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info namespace body optional-params))))
 
-(defn delete-cloud-google-com-v1beta1-collection-namespaced-backend-config-with-http-info
+(defn delete-internal-autoscaling-gke-io-v1-collection-namespaced-capacity-request-with-http-info
   "
-  delete collection of BackendConfig"
-  ([namespace ] (delete-cloud-google-com-v1beta1-collection-namespaced-backend-config-with-http-info namespace nil))
+  delete collection of CapacityRequest"
+  ([namespace ] (delete-internal-autoscaling-gke-io-v1-collection-namespaced-capacity-request-with-http-info namespace nil))
   ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs" :delete
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
@@ -38,19 +38,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn delete-cloud-google-com-v1beta1-collection-namespaced-backend-config
+(defn delete-internal-autoscaling-gke-io-v1-collection-namespaced-capacity-request
   "
-  delete collection of BackendConfig"
-  ([namespace ] (delete-cloud-google-com-v1beta1-collection-namespaced-backend-config namespace nil))
+  delete collection of CapacityRequest"
+  ([namespace ] (delete-internal-autoscaling-gke-io-v1-collection-namespaced-capacity-request namespace nil))
   ([namespace optional-params]
-   (:data (delete-cloud-google-com-v1beta1-collection-namespaced-backend-config-with-http-info namespace optional-params))))
+   (:data (delete-internal-autoscaling-gke-io-v1-collection-namespaced-capacity-request-with-http-info namespace optional-params))))
 
-(defn delete-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn delete-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  delete a BackendConfig"
-  ([name namespace ] (delete-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace nil))
+  delete a CapacityRequest"
+  ([name namespace ] (delete-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace nil))
   ([name namespace {:keys [pretty body dry-run grace-period-seconds orphan-dependents propagation-policy ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs/{name}" :delete
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests/{name}" :delete
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "dryRun" dry-run "gracePeriodSeconds" grace-period-seconds "orphanDependents" orphan-dependents "propagationPolicy" propagation-policy }
@@ -60,19 +60,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn delete-cloud-google-com-v1beta1-namespaced-backend-config
+(defn delete-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  delete a BackendConfig"
-  ([name namespace ] (delete-cloud-google-com-v1beta1-namespaced-backend-config name namespace nil))
+  delete a CapacityRequest"
+  ([name namespace ] (delete-internal-autoscaling-gke-io-v1-namespaced-capacity-request name namespace nil))
   ([name namespace optional-params]
-   (:data (delete-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace optional-params))))
+   (:data (delete-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace optional-params))))
 
-(defn list-cloud-google-com-v1beta1-backend-config-for-all-namespaces-with-http-info
+(defn list-internal-autoscaling-gke-io-v1-capacity-request-for-all-namespaces-with-http-info
   "
-  list objects of kind BackendConfig"
-  ([] (list-cloud-google-com-v1beta1-backend-config-for-all-namespaces-with-http-info nil))
+  list objects of kind CapacityRequest"
+  ([] (list-internal-autoscaling-gke-io-v1-capacity-request-for-all-namespaces-with-http-info nil))
   ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/backendconfigs" :get
+   (call-api "/apis/internal.autoscaling.gke.io/v1/capacityrequests" :get
              {:path-params   {}
               :header-params {}
               :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
@@ -81,19 +81,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn list-cloud-google-com-v1beta1-backend-config-for-all-namespaces
+(defn list-internal-autoscaling-gke-io-v1-capacity-request-for-all-namespaces
   "
-  list objects of kind BackendConfig"
-  ([] (list-cloud-google-com-v1beta1-backend-config-for-all-namespaces nil))
+  list objects of kind CapacityRequest"
+  ([] (list-internal-autoscaling-gke-io-v1-capacity-request-for-all-namespaces nil))
   ([optional-params]
-   (:data (list-cloud-google-com-v1beta1-backend-config-for-all-namespaces-with-http-info optional-params))))
+   (:data (list-internal-autoscaling-gke-io-v1-capacity-request-for-all-namespaces-with-http-info optional-params))))
 
-(defn list-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn list-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  list objects of kind BackendConfig"
-  ([namespace ] (list-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info namespace nil))
+  list objects of kind CapacityRequest"
+  ([namespace ] (list-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info namespace nil))
   ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs" :get
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
@@ -102,19 +102,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn list-cloud-google-com-v1beta1-namespaced-backend-config
+(defn list-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  list objects of kind BackendConfig"
-  ([namespace ] (list-cloud-google-com-v1beta1-namespaced-backend-config namespace nil))
+  list objects of kind CapacityRequest"
+  ([namespace ] (list-internal-autoscaling-gke-io-v1-namespaced-capacity-request namespace nil))
   ([namespace optional-params]
-   (:data (list-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info namespace optional-params))))
+   (:data (list-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info namespace optional-params))))
 
-(defn patch-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn patch-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  partially update the specified BackendConfig"
-  ([name namespace body ] (patch-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace body nil))
+  partially update the specified CapacityRequest"
+  ([name namespace body ] (patch-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace body nil))
   ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs/{name}" :patch
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
@@ -124,19 +124,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn patch-cloud-google-com-v1beta1-namespaced-backend-config
+(defn patch-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  partially update the specified BackendConfig"
-  ([name namespace body ] (patch-cloud-google-com-v1beta1-namespaced-backend-config name namespace body nil))
+  partially update the specified CapacityRequest"
+  ([name namespace body ] (patch-internal-autoscaling-gke-io-v1-namespaced-capacity-request name namespace body nil))
   ([name namespace body optional-params]
-   (:data (patch-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace body optional-params))))
+   (:data (patch-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace body optional-params))))
 
-(defn read-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn read-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  read the specified BackendConfig"
-  ([name namespace ] (read-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace nil))
+  read the specified CapacityRequest"
+  ([name namespace ] (read-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace nil))
   ([name namespace {:keys [pretty resource-version ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs/{name}" :get
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests/{name}" :get
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "resourceVersion" resource-version }
@@ -145,19 +145,19 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn read-cloud-google-com-v1beta1-namespaced-backend-config
+(defn read-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  read the specified BackendConfig"
-  ([name namespace ] (read-cloud-google-com-v1beta1-namespaced-backend-config name namespace nil))
+  read the specified CapacityRequest"
+  ([name namespace ] (read-internal-autoscaling-gke-io-v1-namespaced-capacity-request name namespace nil))
   ([name namespace optional-params]
-   (:data (read-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace optional-params))))
+   (:data (read-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace optional-params))))
 
-(defn replace-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info
+(defn replace-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info
   "
-  replace the specified BackendConfig"
-  ([name namespace body ] (replace-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace body nil))
+  replace the specified CapacityRequest"
+  ([name namespace body ] (replace-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace body nil))
   ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
-   (call-api "/apis/cloud.google.com/v1beta1/namespaces/{namespace}/backendconfigs/{name}" :put
+   (call-api "/apis/internal.autoscaling.gke.io/v1/namespaces/{namespace}/capacityrequests/{name}" :put
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
               :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
@@ -167,10 +167,10 @@
               :accepts       ["application/json" "application/yaml"]
               :auth-names    ["BearerToken"]})))
 
-(defn replace-cloud-google-com-v1beta1-namespaced-backend-config
+(defn replace-internal-autoscaling-gke-io-v1-namespaced-capacity-request
   "
-  replace the specified BackendConfig"
-  ([name namespace body ] (replace-cloud-google-com-v1beta1-namespaced-backend-config name namespace body nil))
+  replace the specified CapacityRequest"
+  ([name namespace body ] (replace-internal-autoscaling-gke-io-v1-namespaced-capacity-request name namespace body nil))
   ([name namespace body optional-params]
-   (:data (replace-cloud-google-com-v1beta1-namespaced-backend-config-with-http-info name namespace body optional-params))))
+   (:data (replace-internal-autoscaling-gke-io-v1-namespaced-capacity-request-with-http-info name namespace body optional-params))))
 

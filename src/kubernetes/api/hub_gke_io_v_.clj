@@ -28,11 +28,11 @@
   "
   delete collection of Membership"
   ([] (delete-hub-gke-io-v1-collection-membership-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/hub.gke.io/v1/memberships" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -71,11 +71,11 @@
   "
   list objects of kind Membership"
   ([] (list-hub-gke-io-v1-membership-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/hub.gke.io/v1/memberships" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -92,11 +92,11 @@
   "
   partially update the specified Membership"
   ([name body ] (patch-hub-gke-io-v1-membership-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/hub.gke.io/v1/memberships/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]

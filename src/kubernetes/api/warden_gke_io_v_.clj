@@ -50,11 +50,11 @@
   "
   delete collection of Audit"
   ([] (delete-warden-gke-io-v1-collection-audit-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/warden.gke.io/v1/audits" :delete
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -71,11 +71,11 @@
   "
   list objects of kind Audit"
   ([] (list-warden-gke-io-v1-audit-with-http-info nil))
-  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/warden.gke.io/v1/audits" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -92,11 +92,11 @@
   "
   partially update the specified Audit"
   ([name body ] (patch-warden-gke-io-v1-audit-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/warden.gke.io/v1/audits/{name}" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -114,11 +114,11 @@
   "
   partially update status of the specified Audit"
   ([name body ] (patch-warden-gke-io-v1-audit-status-with-http-info name body nil))
-  ([name body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/warden.gke.io/v1/audits/{name}/status" :patch
              {:path-params   {"name" name }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]

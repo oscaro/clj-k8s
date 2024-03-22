@@ -116,11 +116,11 @@
   "
   delete collection of FrontendConfig"
   ([namespace ] (delete-networking-gke-io-v1beta1-collection-namespaced-frontend-config-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/frontendconfigs" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -137,11 +137,11 @@
   "
   delete collection of ManagedCertificate"
   ([namespace ] (delete-networking-gke-io-v1beta1-collection-namespaced-managed-certificate-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/managedcertificates" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -158,11 +158,11 @@
   "
   delete collection of ServiceAttachment"
   ([namespace ] (delete-networking-gke-io-v1beta1-collection-namespaced-service-attachment-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/serviceattachments" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -179,11 +179,11 @@
   "
   delete collection of ServiceNetworkEndpointGroup"
   ([namespace ] (delete-networking-gke-io-v1beta1-collection-namespaced-service-network-endpoint-group-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/servicenetworkendpointgroups" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -288,11 +288,11 @@
   "
   delete collection of ManagedCertificate"
   ([namespace ] (delete-networking-gke-io-v1beta2-collection-namespaced-managed-certificate-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta2/namespaces/{namespace}/managedcertificates" :delete
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -331,11 +331,11 @@
   "
   list objects of kind FrontendConfig"
   ([] (list-networking-gke-io-v1beta1-frontend-config-for-all-namespaces-with-http-info nil))
-  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/frontendconfigs" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -352,11 +352,11 @@
   "
   list objects of kind ManagedCertificate"
   ([] (list-networking-gke-io-v1beta1-managed-certificate-for-all-namespaces-with-http-info nil))
-  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/managedcertificates" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -373,11 +373,11 @@
   "
   list objects of kind FrontendConfig"
   ([namespace ] (list-networking-gke-io-v1beta1-namespaced-frontend-config-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/frontendconfigs" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -394,11 +394,11 @@
   "
   list objects of kind ManagedCertificate"
   ([namespace ] (list-networking-gke-io-v1beta1-namespaced-managed-certificate-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/managedcertificates" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -415,11 +415,11 @@
   "
   list objects of kind ServiceAttachment"
   ([namespace ] (list-networking-gke-io-v1beta1-namespaced-service-attachment-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/serviceattachments" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -436,11 +436,11 @@
   "
   list objects of kind ServiceNetworkEndpointGroup"
   ([namespace ] (list-networking-gke-io-v1beta1-namespaced-service-network-endpoint-group-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/servicenetworkendpointgroups" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -457,11 +457,11 @@
   "
   list objects of kind ServiceAttachment"
   ([] (list-networking-gke-io-v1beta1-service-attachment-for-all-namespaces-with-http-info nil))
-  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/serviceattachments" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -478,11 +478,11 @@
   "
   list objects of kind ServiceNetworkEndpointGroup"
   ([] (list-networking-gke-io-v1beta1-service-network-endpoint-group-for-all-namespaces-with-http-info nil))
-  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta1/servicenetworkendpointgroups" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -499,11 +499,11 @@
   "
   list objects of kind ManagedCertificate"
   ([] (list-networking-gke-io-v1beta2-managed-certificate-for-all-namespaces-with-http-info nil))
-  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match timeout-seconds watch ]}]
+  ([{:keys [allow-watch-bookmarks continue field-selector label-selector limit pretty resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta2/managedcertificates" :get
              {:path-params   {}
               :header-params {}
-              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "pretty" pretty "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -520,11 +520,11 @@
   "
   list objects of kind ManagedCertificate"
   ([namespace ] (list-networking-gke-io-v1beta2-namespaced-managed-certificate-with-http-info namespace nil))
-  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match timeout-seconds watch ]}]
+  ([namespace {:keys [pretty allow-watch-bookmarks continue field-selector label-selector limit resource-version resource-version-match send-initial-events timeout-seconds watch ]}]
    (call-api "/apis/networking.gke.io/v1beta2/namespaces/{namespace}/managedcertificates" :get
              {:path-params   {"namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "timeoutSeconds" timeout-seconds "watch" watch }
+              :query-params  {"pretty" pretty "allowWatchBookmarks" allow-watch-bookmarks "continue" continue "fieldSelector" field-selector "labelSelector" label-selector "limit" limit "resourceVersion" resource-version "resourceVersionMatch" resource-version-match "sendInitialEvents" send-initial-events "timeoutSeconds" timeout-seconds "watch" watch }
               :form-params   {}
               :content-types ["application/json" "application/yaml"]
               :accepts       ["application/json" "application/yaml"]
@@ -541,11 +541,11 @@
   "
   partially update the specified FrontendConfig"
   ([name namespace body ] (patch-networking-gke-io-v1beta1-namespaced-frontend-config-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/frontendconfigs/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -563,11 +563,11 @@
   "
   partially update the specified ManagedCertificate"
   ([name namespace body ] (patch-networking-gke-io-v1beta1-namespaced-managed-certificate-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/managedcertificates/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -585,11 +585,11 @@
   "
   partially update the specified ServiceAttachment"
   ([name namespace body ] (patch-networking-gke-io-v1beta1-namespaced-service-attachment-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/serviceattachments/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -607,11 +607,11 @@
   "
   partially update the specified ServiceNetworkEndpointGroup"
   ([name namespace body ] (patch-networking-gke-io-v1beta1-namespaced-service-network-endpoint-group-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/networking.gke.io/v1beta1/namespaces/{namespace}/servicenetworkendpointgroups/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]
@@ -629,11 +629,11 @@
   "
   partially update the specified ManagedCertificate"
   ([name namespace body ] (patch-networking-gke-io-v1beta2-namespaced-managed-certificate-with-http-info name namespace body nil))
-  ([name namespace body {:keys [pretty dry-run field-manager field-validation ]}]
+  ([name namespace body {:keys [pretty dry-run field-manager field-validation force ]}]
    (call-api "/apis/networking.gke.io/v1beta2/namespaces/{namespace}/managedcertificates/{name}" :patch
              {:path-params   {"name" name "namespace" namespace }
               :header-params {}
-              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation }
+              :query-params  {"pretty" pretty "dryRun" dry-run "fieldManager" field-manager "fieldValidation" field-validation "force" force }
               :form-params   {}
               :body-param    body
               :content-types ["application/json-patch+json" "application/merge-patch+json" "application/apply-patch+yaml"]

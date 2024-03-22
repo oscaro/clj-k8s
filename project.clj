@@ -1,4 +1,4 @@
-(defproject com.oscaro/clj-k8s "1.25.8.3-SNAPSHOT"
+(defproject com.oscaro/clj-k8s "1.29.1.0-SNAPSHOT"
   :description "Clojure kubernetes client API stub"
   :url "https://github.com/oscaro/clj-k8s"
   :deploy-repositories [["snapshots" {:url "https://repo.clojars.org"

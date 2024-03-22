@@ -2865,8 +2865,58 @@ net.brehaut.ClojureTools = (function (SH) {
     build_tree: build_tree
   };
 })(SyntaxHighlighter);
-</script><title>com.oscaro/clj-k8s -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/oscaro/clj-k8s">com.oscaro/clj-k8s</a></h1><h2 class="project-version">1.25.8.2</h2><br /><p>Clojure kubernetes client API stub</p>
-</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">io.forward/yaml</td><td class="dotted"><hr /></td><td class="dep-version">1.0.11</td></tr><tr><td class="dep-name">prismatic/schema</td><td class="dotted"><hr /></td><td class="dep-version">1.4.1</td></tr><tr><td class="dep-name">org.flatland/ordered</td><td class="dotted"><hr /></td><td class="dep-version">1.15.11</td></tr><tr><td class="dep-name">com.google.auth/google-auth-library-oauth2-http</td><td class="dotted"><hr /></td><td class="dep-version">1.16.1</td></tr><tr><td class="dep-name">org.apache.httpcomponents/httpclient</td><td class="dotted"><hr /></td><td class="dep-version">4.5.14</td></tr><tr><td class="dep-name">org.apache.httpcomponents/httpcore</td><td class="dotted"><hr /></td><td class="dep-version">4.4.16</td></tr><tr><td class="dep-name">com.fasterxml.jackson.core/jackson-core</td><td class="dotted"><hr /></td><td class="dep-version">2.15.0</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#clj-k8s.gke">clj-k8s.gke</a></li><li><a href="#clj-k8s.models">clj-k8s.models</a></li><li><a href="#clj-k8s.api">clj-k8s.api</a></li><li><a href="#clj-k8s.utils">clj-k8s.utils</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.gke" name="clj-k8s.gke"><h1 class="project-name">clj-k8s.gke</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</script><title>com.oscaro/clj-k8s -- Marginalia</title></head><body><table><tr><td class="docs"><div class="header"><h1 class="project-name"><a href="https://github.com/oscaro/clj-k8s">com.oscaro/clj-k8s</a></h1><h2 class="project-version">1.29.1.0</h2><br /><p>Clojure kubernetes client API stub</p>
+</div><div class="dependencies"><h3>dependencies</h3><table><tr><td class="dep-name">org.clojure/clojure</td><td class="dotted"><hr /></td><td class="dep-version">1.10.1</td></tr><tr><td class="dep-name">clj-http</td><td class="dotted"><hr /></td><td class="dep-version">3.12.3</td></tr><tr><td class="dep-name">cheshire</td><td class="dotted"><hr /></td><td class="dep-version">5.11.0</td></tr><tr><td class="dep-name">io.forward/yaml</td><td class="dotted"><hr /></td><td class="dep-version">1.0.11</td></tr><tr><td class="dep-name">prismatic/schema</td><td class="dotted"><hr /></td><td class="dep-version">1.4.1</td></tr><tr><td class="dep-name">org.flatland/ordered</td><td class="dotted"><hr /></td><td class="dep-version">1.15.11</td></tr><tr><td class="dep-name">com.google.auth/google-auth-library-oauth2-http</td><td class="dotted"><hr /></td><td class="dep-version">1.16.1</td></tr><tr><td class="dep-name">org.apache.httpcomponents/httpclient</td><td class="dotted"><hr /></td><td class="dep-version">4.5.14</td></tr><tr><td class="dep-name">org.apache.httpcomponents/httpcore</td><td class="dotted"><hr /></td><td class="dep-version">4.4.16</td></tr><tr><td class="dep-name">com.fasterxml.jackson.core/jackson-core</td><td class="dotted"><hr /></td><td class="dep-version">2.15.0</td></tr></table></div></td><td class="codes" style="text-align: center; vertical-align: middle;color: #666;padding-right:20px"><br /><br /><br />(this space intentionally left almost blank)</td></tr><tr><td class="docs"><div class="toc"><a name="toc"><h3>namespaces</h3></a><ul><li><a href="#clj-k8s.utils">clj-k8s.utils</a></li><li><a href="#clj-k8s.models">clj-k8s.models</a></li><li><a href="#clj-k8s.gke">clj-k8s.gke</a></li><li><a href="#clj-k8s.api">clj-k8s.api</a></li></ul></div></td><td class="codes">&nbsp;</td></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.utils" name="clj-k8s.utils"><h1 class="project-name">clj-k8s.utils</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.utils
+  (:require [clojure.string :as str]))</pre></td></tr><tr><td class="docs"><p>=====================================</p>
+
+<h1> Utils</h1>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn find-named [x xs]
+  (some #(when (= (:name %) x) %) xs))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defmacro not-found-&gt;nil
+  [&amp; body]
+  `(try
+     ~@body
+     (catch Throwable t#
+       (if (= 404 (-&gt; t# ex-data :status))
+         nil
+         (throw t#)))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn -&gt;label-selector
+  [labels]
+  (if (string? labels)
+    labels
+    (-&gt;&gt; labels
+         (map (fn [[k v]] (format &quot;%s=%s&quot; (name k) v)))
+         (str/join &quot;,&quot;))))</pre></td></tr><tr><td class="docs"><p>Kubernetes Related Predicates</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn- current-condition
+  [{:keys [conditions]}]
+  (-&gt;&gt; conditions
+       (filter #(= (:status %) &quot;True&quot;))
+       first))</pre></td></tr><tr><td class="docs"><p>Returns true if the job is still running</p>
+</td><td class="codes"><pre class="brush: clojure">(defn running?
+  [{:keys [status]}]
+  (boolean (and status (nil? (current-condition status)))))</pre></td></tr><tr><td class="docs"><p>Returns true if the job was successful</p>
+</td><td class="codes"><pre class="brush: clojure">(defn succeeded?
+  [{:keys [status]}]
+  (= (:type (current-condition status)) &quot;Complete&quot;))</pre></td></tr><tr><td class="docs"><p>Returns true if the job failed</p>
+</td><td class="codes"><pre class="brush: clojure">(defn failed?
+  [{:keys [status]}]
+  (or (nil? status) (= (:type (current-condition status)) &quot;Failed&quot;)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.models" name="clj-k8s.models"><h1 class="project-name">clj-k8s.models</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.models
+  (:require [schema.core :as s]))</pre></td></tr><tr><td class="docs"><p>==========================================</p>
+
+<h1>                Models</h1>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(s/defschema KubeClientSpec
+  {:token s/Str
+   :base-url s/Str
+   (s/optional-key :namespace) s/Str})</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(s/defschema KubeClient
+  {:base-url s/Str
+   :auths {s/Str s/Str}
+   :namespace s/Str})</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.gke" name="clj-k8s.gke"><h1 class="project-name">clj-k8s.gke</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.gke
   (:import (com.google.auth.oauth2 GoogleCredentials)
            (java.util List)))</pre></td></tr><tr><td class="docs"><p>=====================================</p>
@@ -2891,20 +2941,7 @@ net.brehaut.ClojureTools = (function (SH) {
     (some-&gt; @creds
             refresh-goog-token!
             .getAccessToken
-            .getTokenValue)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.models" name="clj-k8s.models"><h1 class="project-name">clj-k8s.models</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.models
-  (:require [schema.core :as s]))</pre></td></tr><tr><td class="docs"><p>==========================================</p>
-
-<h1>                Models</h1>
-</td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(s/defschema KubeClientSpec
-  {:token s/Str
-   :base-url s/Str
-   (s/optional-key :namespace) s/Str})</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(s/defschema KubeClient
-  {:base-url s/Str
-   :auths {s/Str s/Str}
-   :namespace s/Str})</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.api" name="clj-k8s.api"><h1 class="project-name">clj-k8s.api</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
+            .getTokenValue)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.api" name="clj-k8s.api"><h1 class="project-name">clj-k8s.api</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.api
   (:require [yaml.core :as yaml]
             [schema.core :as s]
@@ -3130,44 +3167,7 @@ the user <code>HOME</code></p>
             (assoc opts :label-selector)
             (kc/list-core-v1-namespaced-pod (get-in job [:metadata :namespace]))
             :items)
-       []))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#clj-k8s.utils" name="clj-k8s.utils"><h1 class="project-name">clj-k8s.utils</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(ns clj-k8s.utils
-  (:require [clojure.string :as str]))</pre></td></tr><tr><td class="docs"><p>=====================================</p>
-
-<h1> Utils</h1>
-</td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn find-named [x xs]
-  (some #(when (= (:name %) x) %) xs))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defmacro not-found-&gt;nil
-  [&amp; body]
-  `(try
-     ~@body
-     (catch Throwable t#
-       (if (= 404 (-&gt; t# ex-data :status))
-         nil
-         (throw t#)))))</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn -&gt;label-selector
-  [labels]
-  (if (string? labels)
-    labels
-    (-&gt;&gt; labels
-         (map (fn [[k v]] (format &quot;%s=%s&quot; (name k) v)))
-         (str/join &quot;,&quot;))))</pre></td></tr><tr><td class="docs"><p>Kubernetes Related Predicates</p>
-</td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(defn- current-condition
-  [{:keys [conditions]}]
-  (-&gt;&gt; conditions
-       (filter #(= (:status %) &quot;True&quot;))
-       first))</pre></td></tr><tr><td class="docs"><p>Returns true if the job is still running</p>
-</td><td class="codes"><pre class="brush: clojure">(defn running?
-  [{:keys [status]}]
-  (boolean (and status (nil? (current-condition status)))))</pre></td></tr><tr><td class="docs"><p>Returns true if the job was successful</p>
-</td><td class="codes"><pre class="brush: clojure">(defn succeeded?
-  [{:keys [status]}]
-  (= (:type (current-condition status)) &quot;Complete&quot;))</pre></td></tr><tr><td class="docs"><p>Returns true if the job failed</p>
-</td><td class="codes"><pre class="brush: clojure">(defn failed?
-  [{:keys [status]}]
-  (or (nil? status) (= (:type (current-condition status)) &quot;Failed&quot;)))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_clj-k8s.gke">clj-k8s.gke</li><li class="floating-toc-li" id="floating-toc_clj-k8s.models">clj-k8s.models</li><li class="floating-toc-li" id="floating-toc_clj-k8s.api">clj-k8s.api</li><li class="floating-toc-li" id="floating-toc_clj-k8s.utils">clj-k8s.utils</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
+       []))))</pre></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_clj-k8s.utils">clj-k8s.utils</li><li class="floating-toc-li" id="floating-toc_clj-k8s.models">clj-k8s.models</li><li class="floating-toc-li" id="floating-toc_clj-k8s.gke">clj-k8s.gke</li><li class="floating-toc-li" id="floating-toc_clj-k8s.api">clj-k8s.api</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 
 // hackity hack
